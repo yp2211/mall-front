@@ -1,0 +1,42 @@
+/* 404 エラーページ
+-----------------------*/
+.l-main.is-error {
+  background: url(https://www.nttdata.comhttps://www.nttdata.com/assets/NTTDATAJapan/images/logo-n.svg) no-repeat bottom right #5876aa;
+  background-size: 375px;
+  min-height: 100vh;
+}
+.l-main.is-error .c-block-content-header-wrapper {
+  padding: 130px 40px 40px;
+}
+.l-main.is-error .c-block-content-header-head {
+  margin-left: -12px;
+  font-size: 15.2rem;
+  letter-spacing: 1px;
+}
+.l-main.is-error .c-block {
+  padding: 20px 40px;
+}
+.l-main.is-error .c-block-error-text {
+  line-height: 2;
+  font-size: 3rem;
+}
+@media (max-width: 767px) {
+  .l-main.is-error {
+    background-size: 100%;
+  }
+  .l-main.is-error .c-block-content-header-wrapper {
+    padding: 120px 20px 20px;
+  }
+  .l-main.is-error .c-block-content-header-head {
+    margin-left: -7px;
+    font-size: 9rem;
+  }
+  .l-main.is-error .c-block {
+    padding: 20px;
+  }
+  .l-main.is-error .c-block-error-text {
+    line-height: 1.4;
+    font-size: 2.6rem;
+  }
+}
+/*# sourceMappingURL=l-error.css.map */

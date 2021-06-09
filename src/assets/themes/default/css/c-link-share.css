@@ -1,0 +1,53 @@
+/* SNS Share
+-----------------------*/
+.c-link-share {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  height: 1em;
+  cursor: pointer;
+}
+.c-link-share-text:hover span {
+  text-decoration: underline;
+}
+.c-link-share-button {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 8px 8px 15px 1px rgba(0, 0, 0, 0.5);
+  width: 50px;
+  height: 50px;
+  color: #0079a1;
+  font-size: 1.6rem;
+  line-height: 50px;
+  text-align: center;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+.is-open .c-link-share-button {
+  opacity: 1;
+  pointer-events: auto;
+}
+.is-open .c-link-share-button:hover {
+  color: #fff;
+  background: #0079a1;
+}
+.is-open .c-link-share-button:nth-child(2) {
+  top: -110px;
+  left: -25px;
+}
+.is-open .c-link-share-button:nth-child(3) {
+  top: -70px;
+  left: -67px;
+}
+.is-open .c-link-share-button:nth-child(4) {
+  top: -15px;
+  left: -85px;
+}
+/*# sourceMappingURL=c-link-share.css.map */

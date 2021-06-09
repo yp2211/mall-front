@@ -1,0 +1,48 @@
+
+/* テーブルリスト */
+.c-list-table {
+  display: table;
+  border-top: 1px solid #D6D6D6;
+  width: 100%;
+  table-layout: fixed;
+}
+.c-list-table dl {
+  display: table-row;
+}
+.c-list-table dt {
+  font-weight: bold;
+}
+.c-list-table .c-list-table-th,
+.c-list-table .c-list-table-td {
+  display: table-cell;
+  border-bottom: 1px solid #d6d6d6;
+  padding: 15px;
+  line-height: 2;
+}
+.c-list-table .c-list-table-th {
+  width: 150px;
+}
+@media screen and (max-width: 767px) {
+  .c-list-table {
+    display: block;
+  }
+  .c-list-table dl {
+    display: block;
+    border-bottom: 1px solid #d6d6d6;
+  }
+  .c-list-table.c-list-table-th,
+  .c-list-table .c-list-table-td {
+    display: block;
+    padding: 15px;
+    line-height: 2;
+  }
+  .c-list-table .c-list-table-th {
+    border-bottom: none;
+    padding: 10px 10px 0 10px;
+    width: 100%;
+  }
+  .c-list-table .c-list-table-td {
+    border-bottom: none;
+    padding: 10px;
+  }
+}

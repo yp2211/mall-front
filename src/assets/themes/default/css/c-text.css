@@ -1,0 +1,20 @@
+/* テキスト
+-----------------------*/
+.c-text-img-over {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding-left: calc(42/2800*100vw);
+  padding-right: calc(42/2800*100vw);
+  padding-bottom: calc(54/2800*100vw);
+  color: #fff;
+  font-size: calc(32/2800*100vw);
+  line-height: calc(44/32);
+}
+.c-text-img-over-title {
+  font-size: calc(40/2800*100vw);
+  font-weight: bold;
+  line-height: calc(60/40);
+}
+/*# sourceMappingURL=c-text.css.map */

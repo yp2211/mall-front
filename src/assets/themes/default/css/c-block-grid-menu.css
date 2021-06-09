@@ -1,0 +1,83 @@
+/* デジタル1stページ
+  BottomImageContentWithGridMenu
+-----------------------*/
+.c-block-grid-menu,
+.c-block-grid-menu-image {
+  max-width: 1303px;
+  width: 100%;
+  margin: 0 auto;
+}
+.c-block-grid-menu-item {
+  position: relative;
+  width: calc((100% - 25px) / 2 - 0.1px);
+}
+.c-block-grid-menu > .c-block-grid-menu-item:nth-of-type(n+3) {
+  margin-top: 25px;
+}
+.c-block-grid-menu-item-image {
+  width: 100%;
+}
+.c-block-grid-menu-item-text {
+  position: absolute;
+  top: 50%;
+  left: 26%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  width: 50%;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.c-block-grid-menu-item:hover .c-block-grid-menu-item-text {
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.c-block-grid-menu-modal {
+  background-color: #000;
+  max-height: 80vh;
+  overflow: auto;
+  cursor: default;
+}
+.c-block-grid-menu-modal-inner {
+  padding: 40px;
+}
+.c-block-grid-menu-modal-inner-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+}
+.c-block-grid-menu-modal-inner-title h4 {
+  font-family: 'Noto Serif JP', 'Noto Sans Japanese', serif;
+  font-size: 2.6rem;
+  font-weight: bold;
+  line-height: 1.5;
+}
+.c-block-grid-menu-modal-inner-title img {
+  display: inline-block;
+  max-width: 112px;
+  max-height: 112px;
+  margin-left: 20px;
+}
+@media screen and (max-width: 767px) {
+  .c-block-grid-menu-item {
+    position: relative;
+    width: 100%;
+  }
+  .c-block-grid-menu > .c-block-grid-menu-item:nth-of-type(n+2) {
+    margin-top: 25px;
+  }
+  .c-block-grid-menu-modal-inner {
+    padding: 20px;
+  }
+  .c-block-grid-menu-item-text {
+    width: 54%;
+    font-size: 14px;
+  }
+  .c-block-grid-menu-modal-inner-title img {
+    max-width: 56px;
+    max-height: 56px;
+  }
+}
+/*# sourceMappingURL=c-block-grid-menu.css.map */

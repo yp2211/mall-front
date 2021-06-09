@@ -1,0 +1,60 @@
+/* トップページ ピックアップ */
+.c-block-toppage-pickup {
+  padding-bottom: 60px;
+}
+.c-block-toppage-pickup-head {
+  font-size: 1.8rem;
+  font-weight: normal;
+}
+.c-block-toppage-pickup-body {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.c-block-toppage-pickup-item {
+  margin-left: 30px;
+  width: calc((100% - 60px) / 3 - 0.1px);
+}
+.c-block-toppage-pickup-item:nth-child(n+4) {
+  margin-top: 60px;
+}
+.c-block-toppage-pickup-item:nth-child(3n-2) {
+  margin-left: 0;
+}
+.c-block-toppage-pickup-item a {
+  display: block;
+  color: inherit;
+}
+.c-block-toppage-pickup-item a:hover {
+  text-decoration: none;
+}
+.c-block-toppage-pickup-item-image img {
+  width: 100%;
+}
+.c-block-toppage-pickup-item-category {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.c-block-toppage-pickup-item-head {
+  margin-top: 20px;
+  font-family: 'Noto Serif JP', 'Noto Sans Japanese', serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+@media screen and (max-width: 767px) {
+  .c-block-toppage-pickup-head {
+    font-size: 1.8rem;
+  }
+  .c-block-toppage-pickup-body {
+    display: flex;
+    margin-top: 20px;
+  }
+  .c-block-toppage-pickup-item {
+    margin-left: 0;
+    width: auto;
+  }
+  .c-block-toppage-pickup-item + .c-block-toppage-pickup-item {
+    margin-top: 40px;
+  }
+}

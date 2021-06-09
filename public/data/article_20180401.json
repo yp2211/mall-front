@@ -1,0 +1,14 @@
+{
+  "id": "20180401",
+  "nav": [
+    { "href": "/", "name": "ホーム"  },
+    { "href": "/news", "name": "ニュース"  }
+  ],
+  "data": {
+    "title": "会長及び社長交代のお知らせ",
+    "created": "2018年4月",
+    "updated": "2018年4月",
+    "author": "ニュータッチイノベーション株式会社",
+    "content": "<p>ニュータッチイノベーション株式会社は、2018年4月1日付けで、会長及び社長が交代いたしましたのでお知らせいたします。</p><div style=\"max-width: 50rem;\">\n\t\t\t<table class=\"tableList\" align=\"center\">\n\t\t\t\t<tbody>\n\t\t\t\t\t<tr>\n\t\t\t\t\t\t<th>氏名</th>\n\t\t\t\t\t\t<th>新役職名</th>\n\t\t\t\t\t\t<th>旧役職名</th>\n\t\t\t\t\t</tr>\n\t\t\t\t\t<tr align=\"center\">\n\t\t\t\t\t\t<td>徐 行倹</td>\n\t\t\t\t\t\t<td>代表取締役会長</td>\n\t\t\t\t\t\t<td>代表取締役社長</td>\n\t\t\t\t\t</tr>\n\t\t\t\t\t<tr align=\"center\">\n\t\t\t\t\t\t<td>張 喆賓</td>\n\t\t\t\t\t\t<td>取締役社長</td>\n\t\t\t\t\t\t<td>副社長</td>\n\t\t\t\t\t</tr>\n\t\t\t\t</tbody>\n\t\t\t</table>\n\t\t</div>"
+  }
+}
