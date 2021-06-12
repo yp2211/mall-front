@@ -1,17 +1,36 @@
 <template>
-  <main class="l-main">
-    <!-- Carousel -->
-    <section class="c-block-mainv">
-      <h2 class="c-block-mainv-head">最新情報</h2>
-      <div class="c-block-mainv-body slick-wrapper">
-        <article class="c-block-mainv-item">
-          <div class="c-block-mainv-item-bg">
-            <picture>
-              <source media="(max-width:767px)" srcset="../../assets/themes/default/images/banner.eeca22ef.png">
-              <source media="(min-width:768px)" srcset="../../assets/themes/default/images/banner.eeca22ef.png">
-              <img src="../../assets/themes/default/images/banner.eeca22ef.png" class="js-object-fit-images" alt="" DisableWebEdit="False" />
-            </picture>
-          </div>
+
+    <div>
+      
+  <!-- <swiper
+    :slides-per-view="3"
+    :space-between="50"
+    navigation
+    :pagination="{ clickable: true }"
+    :scrollbar="{ draggable: true }"
+    @swiper="onSwiper"
+    @slideChange="onSlideChange"
+  > 
+    <swiper-slide>Slide 1</swiper-slide>
+    <swiper-slide>Slide 2</swiper-slide>
+    <swiper-slide>Slide 3</swiper-slide>
+  </swiper>
+  -->
+        <div class="slider-area section-padding-5">
+            <div class="container-fluid">
+                <div class="slider-active-2 swiper-container pagination-wrap-3">
+
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide bag-single-slider slider-height-3 custom-d-flex custom-align-item-center single-animation-wrap bag-slider-bg-color">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="hero-content-8 slider-animated-2">
+                                        <h4 class="animated">THE BEST <br>DESIGN FROM <br>GIORDANO </h4>
+                                        <h1 class="animated">Giordano Duffles Collection </h1>
+                                        <p class="animated">Lorem ipsum dolor sit amet, consectetur adipis elit. Nunc imperdiet, nulla a scelerisque condimentum, enim mi blandit erat, at blandit. </p>
+                                        <div class="btn-style-7">
+                                            <a class="animated" href="shop.html">VIEW COLLECTION <i class="ion-play"></i></a>
+                                        </div>
           <div class="c-block-mainv-item-inner">
             <h3 class="c-block-mainv-item-head">
               <a href="/about" target="">
