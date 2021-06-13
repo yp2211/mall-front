@@ -1,17 +1,13 @@
 <template>
-  <site-header />
-  <router-view />
-  <site-footer />
+  <router-view/>
 </template>
 
 <script>
-import SiteHeader from './components/SiteHeader/index.vue'
-import SiteFooter from './components/SiteFooter/index.vue'
+// import "./assets/themes/bag/js/main";
 
 export default {
   name: 'App',
   components: {
-    SiteHeader, SiteFooter
   },
   watch: {
     locale(val) {
