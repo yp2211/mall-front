@@ -7,7 +7,11 @@ import vue from '@vitejs/plugin-vue'
 export default {
   plugins: [vue()],
   test: /\.less$/,
-  loader: "style-loader!css-loader!less-loader"
+  loader: "style-loader!css-loader!less-loader",
+  // $: 'jquery',
+  // jquery: 'jquery',
+  // jQuery: 'jquery',
+  // 'windows.jQuery': 'jquery'
 }
 
 // const path = require('path')

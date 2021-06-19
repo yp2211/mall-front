@@ -305,7 +305,7 @@
               </div>
           </div>
       </div>
-  </div>          
+  </div>
 </template>
 
 <script>
@@ -364,6 +364,6 @@ export default {
 }
 </script>
 
-<style scoped>
-@import 'swiper/swiper.less';
+<style>
+/* @import 'swiper/swiper.less'; */
 </style>

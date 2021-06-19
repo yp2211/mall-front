@@ -45,7 +45,3 @@ export default {
   name: "bottom-footer",
 };
 </script>
-
-<style scoped>
-/* @import url('./assets/themes/bag/css/style.less'); */
-</style>
