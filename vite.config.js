@@ -8,10 +8,7 @@ export default {
   plugins: [vue()],
   test: /\.less$/,
   loader: "style-loader!css-loader!less-loader",
-  // $: 'jquery',
-  // jquery: 'jquery',
-  // jQuery: 'jquery',
-  // 'windows.jQuery': 'jquery'
+
 }
 
 // const path = require('path')

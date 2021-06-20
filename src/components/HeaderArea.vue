@@ -132,7 +132,7 @@
                                 </div>
                             </div>
                             <div class="header-action-login-2">
-                                <a data-bs-toggle="modal" data-bs-target="#loginActive" v-on:click="toggleModal" href="#"><i class="t-icon ion-person"></i></a>
+                                <a data-bs-toggle="modal" data-bs-target="#loginActive" href="#"><i class="t-icon ion-person"></i></a>
                             </div>
                             <div class="mobile-menu mobile-menu-black">
                                 <a class="mobile-menu-active-button" href="#" v-on:click="onClickMobileMenuActiveButton(e)"><i class="ion-navicon"></i></a>
@@ -627,8 +627,8 @@ export default {
 </script>
 
 <style>
-.displayBlock {
+/* .displayBlock {
     display: block !important;
     padding-right: 17px;
-}
+} */
 </style>

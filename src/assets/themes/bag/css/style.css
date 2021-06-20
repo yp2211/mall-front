@@ -8270,7 +8270,7 @@ input[type="submit"] {
 }
 
 .cosmetic2-hero-content-wrap {
-  background-image: url("../../assets/images/slider/bg-slider-cosmetic-2.jpg");
+  background-image: url("../images/slider/bg-slider-cosmetic-2.jpg");
   background-color: #7A7570;
   background-position: center center;
   background-size: cover;
@@ -11482,13 +11482,13 @@ input[type="submit"] {
 }
 
 .barber-about-top {
-  background-image: url("../../assets/images/bg/bg-7.jpg");
+  background-image: url("../images/bg/bg-7.jpg");
   background-position: 0 0;
   background-repeat: no-repeat;
 }
 
 .barber-about-bottom {
-  background-image: url("../../assets/images/bg/bg-8.jpg");
+  background-image: url("../images/bg/bg-8.jpg");
   background-position: top right;
   background-repeat: no-repeat;
 }
@@ -12677,7 +12677,7 @@ input[type="submit"] {
   border: none;
   padding: 0;
   z-index: 99;
-  background: rgba(0, 0, 0, 0) url("../../assets/images/icon-img/angle-right-2.png") no-repeat scroll right 0px center;
+  background: rgba(0, 0, 0, 0) url("../images/icon-img/angle-right-2.png") no-repeat scroll right 0px center;
 }
 
 .subscribe-form-6 form .mc-form-6 .clear-6 input {
@@ -12688,7 +12688,7 @@ input[type="submit"] {
 }
 
 .subscribe-form-6 form .mc-form-6 .clear-6:hover {
-  background: rgba(0, 0, 0, 0) url("../../assets/images/icon-img/angle-right-2-hover.png") no-repeat scroll right 0px center;
+  background: rgba(0, 0, 0, 0) url("../images/icon-img/angle-right-2-hover.png") no-repeat scroll right 0px center;
 }
 
 .newsletter-padding-lrtp {
@@ -13169,7 +13169,7 @@ input[type="submit"] {
   border: none;
   padding: 0;
   z-index: 99;
-  background: rgba(0, 0, 0, 0) url("../../assets/images/icon-img/angle-right.png") no-repeat scroll right 0px center;
+  background: rgba(0, 0, 0, 0) url("../images/icon-img/angle-right.png") no-repeat scroll right 0px center;
 }
 
 .subscribe-form-wrap .subscribe-form-2 form .mc-form-2 .clear-2 input {
@@ -24298,7 +24298,7 @@ input[type="submit"] {
   height: auto;
   line-height: 24px;
   border-radius: 0;
-  background: rgba(0, 0, 0, 0) url("../../assets/images/icon-img/arrow-down-3.png") no-repeat scroll right 0px center;
+  background: rgba(0, 0, 0, 0) url("../images/icon-img/arrow-down-3.png") no-repeat scroll right 0px center;
 }
 
 @media only screen and (min-width: 1366px) and (max-width: 1600px) {
@@ -24345,7 +24345,7 @@ input[type="submit"] {
 }
 
 .nice-select-style-1.open {
-  background: rgba(0, 0, 0, 0) url("../../assets/images/icon-img/arrow-up-1.png") no-repeat scroll right 0px center;
+  background: rgba(0, 0, 0, 0) url("../images/icon-img/arrow-up-1.png") no-repeat scroll right 0px center;
 }
 
 .nice-select-style-1.nice-select::after {
@@ -26570,7 +26570,7 @@ input[type="submit"] {
   cursor: pointer;
   -moz-appearance: none;
   -webkit-appearance: none;
-  background: rgba(0, 0, 0, 0) url("../../assets/images/icon-img/select.png") no-repeat scroll right 18px center;
+  background: rgba(0, 0, 0, 0) url("../images/icon-img/select.png") no-repeat scroll right 18px center;
 }
 
 .billing-info-wrap .checkout-account p {
@@ -27948,7 +27948,7 @@ input[type="submit"] {
   border: none;
   padding: 0;
   z-index: 99;
-  background: rgba(0, 0, 0, 0) url("../../assets/images/icon-img/popup-newsletter-gray.png") no-repeat scroll right 30px center;
+  background: rgba(0, 0, 0, 0) url("../images/icon-img/popup-newsletter-gray.png") no-repeat scroll right 30px center;
 }
 
 .popup-wrapper-area .popup-wrapper .newsletter-popup-content .popup-subscribe-form .popup-subscribe-form-style .popup-mc-form .popup-clear input {
@@ -27959,7 +27959,7 @@ input[type="submit"] {
 }
 
 .popup-wrapper-area .popup-wrapper .newsletter-popup-content .popup-subscribe-form .popup-subscribe-form-style .popup-mc-form .popup-clear:hover {
-  background: rgba(0, 0, 0, 0) url("../../assets/images/icon-img/popup-newsletter-red.png") no-repeat scroll right 30px center;
+  background: rgba(0, 0, 0, 0) url("../images/icon-img/popup-newsletter-red.png") no-repeat scroll right 30px center;
 }
 
 .popup-wrapper-area .popup-wrapper .newsletter-popup-content a {

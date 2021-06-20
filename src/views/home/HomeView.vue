@@ -1,17 +1,17 @@
 <template>
     <div class="main-wrapper main-wrapper-2">
-        <header-area></header-area>
+        <header-area2></header-area2>
         <router-view></router-view>
-        <bottom-footer></bottom-footer>
+        <bottom-footer2></bottom-footer2>
     </div>
 </template>
 
 <script>
-import HeaderArea from '../../components/HeaderArea.vue'
-import BottomFooter from '../../components/BottomFooter.vue'
+import HeaderArea2 from '../../components/HeaderArea2.vue'
+import BottomFooter2 from '../../components/BottomFooter2.vue'
 
 export default {
-    components: { HeaderArea, BottomFooter },
+    components: { HeaderArea2, BottomFooter2 },
     name: 'home-view'
 }
 </script>

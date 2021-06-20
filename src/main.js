@@ -2,11 +2,13 @@ import { createApp, h } from 'vue'
 import App from './App.vue'
 import router from "./router";
 import i18n from './i18n';
+import axios from 'axios';
+import VueAxios from 'vue-axios';
+// import VueLazyLoad from 'vue-lazyload';
+// import VueCookie from 'vue-cookie';
 // import store from './store'
 
 const app = createApp(App);
-// app.prototype.jQuery = jQuery;
-// app.prototype.$ = jQuery;
 
 app.use(router);
 app.use(i18n);
@@ -14,9 +16,15 @@ app.use(i18n);
 // app.use({
 //     install: function(Vue, options){
 //         Vue.prototype.$jQuery = require('jquery'); // you'll have this.$jQuery anywhere in your vue project
-//         }
-//     });
-
+// //         }
+// //     });
+app.use(VueAxios,axios);
+// // app.use(VueCookie);
+// app.use(VueLazyLoad,{
+//   loading:'/imgs/loading-svg/loading-bars.svg'
+// })
+// Vue.prototype.$message = Message;
+// Vue.config.productionTip = false
 app.mount('#app');
 // createApp(App).mount('#app')
 

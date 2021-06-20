@@ -309,6 +309,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import Swiper, {
   Autoplay,
   EffectCoverflow,
@@ -322,6 +323,16 @@ export default {
     name: "index",
     components: { },
     mounted() {
+        // axios
+        // .get('/shop')
+        // .then(response => {
+        //     console.log(response);
+        // })
+        // .catch(function (error) { // 请求失败处理
+        //     console.log(error);
+        // });
+
+
       new Swiper(".slider-active-2", {
         slidesPerView: 1,
         loop: true,
