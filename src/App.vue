@@ -16,7 +16,7 @@ export default {
   },
   mounted() {
     this.$i18n.locale = 'en';
-
+    // process.env.BASE_API = 'api';
     // if(this.$cookie.get('userId')){
     //   this.getUser();
     //   this.getCartCount();

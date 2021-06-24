@@ -7,9 +7,9 @@ import VueAxios from 'vue-axios';
 // import VueLazyLoad from 'vue-lazyload';
 // import VueCookie from 'vue-cookie';
 // import store from './store'
+// import path from 'path'
 
 const app = createApp(App);
-
 app.use(router);
 app.use(i18n);
 // app.use(store);

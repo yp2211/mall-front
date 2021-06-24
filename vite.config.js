@@ -1,5 +1,4 @@
 import vue from '@vitejs/plugin-vue'
-// import path from 'path'
 
 /**
  * @type {import('vite').UserConfig}
@@ -8,7 +7,19 @@ export default {
   plugins: [vue()],
   test: /\.less$/,
   loader: "style-loader!css-loader!less-loader",
-
+  server: {
+    host:'localhost',
+    port:3000,
+    proxy:{
+      '/api':{
+       target:'http://localhost:8888',
+        changeOrigin:true,
+        pathRewrite:{
+          '/api':''
+        }
+      }
+    }
+  },
 }
 
 // const path = require('path')

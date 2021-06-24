@@ -12,7 +12,10 @@ import BottomFooter2 from '../../components/BottomFooter2.vue'
 
 export default {
     components: { HeaderArea2, BottomFooter2 },
-    name: 'home-view'
+    name: 'home-view',
+    mounted() {
+        console.log(process.env);
+    }
 }
 </script>
 
