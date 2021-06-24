@@ -11,12 +11,14 @@ export default {
     host:'localhost',
     port:3000,
     proxy:{
-      '/api':{
-       target:'http://localhost:8888',
-        changeOrigin:true,
-        pathRewrite:{
-          '/api':''
-        }
+      '/api': {
+        target: {
+          protocol: 'http:',
+          host: 'localhost',
+          port: 8888
+        },
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '')
       }
     }
   },
