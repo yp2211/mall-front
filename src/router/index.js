@@ -24,11 +24,15 @@ const router = createRouter({
                 }, {
                   path: '/about',
                   name: 'about',
-                  component: () => import('../views/home/about.vue')        
+                  component: () => import('../views/home/about.vue')
+                }, {
+                  path: '/product-details',
+                  name: 'productDetails',
+                  component: () => import('../views/home/productDetails.vue')
                 }, {
                   path: '/404',
                   name: 'notfound',
-                  component: () => import('../views/home/notfound.vue')                  
+                  component: () => import('../views/home/notfound.vue')
                 // }, {
                 //   path: '/product/:id',
                 //   name: 'product',
