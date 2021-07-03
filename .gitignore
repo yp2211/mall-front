@@ -4,6 +4,10 @@ node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+<<<<<<< HEAD
+=======
+# package-lock.json
+>>>>>>> 87957675000d3312874c17df0847a7015ad2e952
 
 # Editor directories and files
 .idea
