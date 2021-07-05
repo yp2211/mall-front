@@ -46,11 +46,7 @@
                                 <div class="product-details-review-wrap">
                                     <div class="product-details-review">
                                         <div class="product-rating">
-                                            <i class="ion-android-star"></i>
-                                            <i class="ion-android-star"></i>
-                                            <i class="ion-android-star"></i>
-                                            <i class="ion-android-star"></i>
-                                            <i class="ion-android-star gray"></i>
+                                            <review-stars :stars="product.stars"></review-stars>
                                         </div>
                                         <span>{{product.reviews.length}} reviews</span>
                                     </div>
@@ -86,7 +82,9 @@
                                         <li><span class="title">Category:</span> <a href="#">{{product.category}}</a></li>
                                         <li><span class="title">Tags:</span>
                                             <ul class="tag">
-                                                <li v-for="(item, index) in product.tags" v-bind:key="index"><a :href="`/shop?tag=`+item">{{item}}</a>,</li>
+                                                <li v-for="(item, index) in product.tags" v-bind:key="index">
+                                                    <a :href="`/shop?tag=${item}`">{{item}}</a>{{(index < product.tags.length-1)?"," : ""}}
+                                                </li>
                                             </ul>
                                         </li>
                                         <li><span class="title">Share:</span>
@@ -130,11 +128,7 @@
                                                         <p>{{item.name}} <span>- {{item.date}}</span></p>
                                                     </div>
                                                     <div class="client-rating">
-                                                        <i class="ion-android-star" :class="{'gray' :item.stars <= 0}"></i>
-                                                        <i class="ion-android-star" :class="{'gray' :item.stars <= 1}"></i>
-                                                        <i class="ion-android-star" :class="{'gray' :item.stars <= 2}"></i>
-                                                        <i class="ion-android-star" :class="{'gray' :item.stars <= 3}"></i>
-                                                        <i class="ion-android-star" :class="{'gray' :item.stars <= 4}"></i>
+                                                        <review-stars :stars="item.stars"></review-stars>
                                                     </div>
                                                 </div>
                                                 <p v-html="item.content"></p>
@@ -145,11 +139,7 @@
                                         <h4> Add a review </h4>
                                         <h5>Your rating</h5>
                                         <div class="client-rating">
-                                            <i class="ion-android-star"></i>
-                                            <i class="ion-android-star"></i>
-                                            <i class="ion-android-star"></i>
-                                            <i class="ion-android-star"></i>
-                                            <i class="ion-android-star gray"></i>
+                                            <review-stars :stars="myStars" :editMode="true" @update-stars="setStars"></review-stars>
                                         </div>
                                         <form action="#">
                                             <div class="row">
@@ -226,56 +216,7 @@
                             </div>
                         </div>
                         <div class="sidebar-widget">
-                            <div class="sidebar-widget-title mb-25">
-                                <h3>Recent Products </h3>
-                            </div>
-                            <div class="sidebar-product-wrap">
-                                <div class="single-sidebar-product">
-                                    <div class="sidebar-product-img">
-                                        <a href="product-details.html"><img src="../../assets/themes/bag/images/product/shop-sidebar-1.jpg" alt=""></a>
-                                    </div>
-                                    <div class="sidebar-product-content">
-                                        <h4><a href="product-details.html">Longline T-Shirt In Lined Fabric</a></h4>
-                                        <span> $31.00 – $34.00</span>
-                                    </div>
-                                </div>
-                                <div class="single-sidebar-product">
-                                    <div class="sidebar-product-img">
-                                        <a href="product-details.html"><img src="../../assets/themes/bag/images/product/shop-sidebar-2.jpg" alt=""></a>
-                                    </div>
-                                    <div class="sidebar-product-content">
-                                        <h4><a href="product-details.html"> T-shirt International</a></h4>
-                                        <span> $35.00 – $37.00</span>
-                                    </div>
-                                </div>
-                                <div class="single-sidebar-product">
-                                    <div class="sidebar-product-img">
-                                        <a href="product-details.html"><img src="../../assets/themes/bag/images/product/shop-sidebar-3.jpg" alt=""></a>
-                                    </div>
-                                    <div class="sidebar-product-content">
-                                        <h4><a href="product-details.html">Satchel In Grey Dawson Backpack</a></h4>
-                                        <span> $40.00 – $42.00</span>
-                                    </div>
-                                </div>
-                                <div class="single-sidebar-product">
-                                    <div class="sidebar-product-img">
-                                        <a href="product-details.html"><img src="../../assets/themes/bag/images/product/shop-sidebar-4.jpg" alt=""></a>
-                                    </div>
-                                    <div class="sidebar-product-content">
-                                        <h4><a href="product-details.html">Nike Heritage Herschel backpack</a></h4>
-                                        <span> $43.00 – $45.00</span>
-                                    </div>
-                                </div>
-                                <div class="single-sidebar-product">
-                                    <div class="sidebar-product-img">
-                                        <a href="product-details.html"><img src="../../assets/themes/bag/images/product/shop-sidebar-5.jpg" alt=""></a>
-                                    </div>
-                                    <div class="sidebar-product-content">
-                                        <h4><a href="product-details.html">Set Supreme Cap</a></h4>
-                                        <span> $52.00 – $55.00</span>
-                                    </div>
-                                </div>
-                            </div>
+                        <recent-products />
                         </div>
                     </div>
                 </div>
@@ -289,19 +230,19 @@
             </div>
             <div class="relative-product-active swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
+                    <div class="swiper-slide" v-for="(item, index) in relativeProducts" :key="index">
                         <div class="product-wrap">
                             <div class="product-img mb-20">
-                                <a href="/product-details">
-                                    <img class="default-img" src="../../assets/themes/bag/images/product/product-2.jpg" alt="">
-                                    <img class="hover-img" src="../../assets/themes/bag/images/product/product-2-1.jpg" alt="">
+                                <a :href="`/product-details/${item.id}`">
+                                    <img class="default-img" :src="item.imgsPreview.default.large" alt="">
+                                    <img class="hover-img" :src="item.imgsPreview.hover.large" alt="">
                                 </a>
                                 <div class="product-action-wrap">
                                     <div class="product-action-left">
                                         <button aria-label="Add To Cart"><i class="ion-ios-plus-empty"></i> Add to cart </button>
                                     </div>
                                     <div class="product-action-right tooltip-style">
-                                        <button aria-label="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="ion-ios-eye-outline"></i></button>
+                                        <button aria-label="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal" v-on:click="setPreviewId(index)"><i class="ion-ios-eye-outline"></i></button>
                                         <button aria-label="Add To Wishlist"><i class="ion-ios-heart-outline"></i></button>
                                         <button aria-label="Compare"><i class="ion-stats-bars"></i></button>
                                     </div>
@@ -309,181 +250,12 @@
                             </div>
                             <div class="product-content text-center">
                                 <div class="product-rating">
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star gray"></i>
+                                    <review-stars :stars="item.stars"></review-stars>
                                 </div>
-                                <h3><a href="product-details.html">Satchel In Washed Navy Canvas</a></h3>
+                                <h3><a :href="`/product-details/${item.id}`">{{item.title}}</a></h3>
                                 <div class="product-price">
-                                    <span class="old-price">$24.00</span>
-                                    <span class="new-price">$12.00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="product-wrap">
-                            <div class="product-img mb-20">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="../../assets/themes/bag/images/product/product-3.jpg" alt="">
-                                    <img class="hover-img" src="../../assets/themes/bag/images/product/product-3-1.jpg" alt="">
-                                </a>
-                                <div class="product-action-wrap">
-                                    <div class="product-action-left">
-                                        <button aria-label="Add To Cart"><i class="ion-ios-plus-empty"></i> Add to cart </button>
-                                    </div>
-                                    <div class="product-action-right tooltip-style">
-                                        <button aria-label="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="ion-ios-eye-outline"></i></button>
-                                        <button aria-label="Add To Wishlist"><i class="ion-ios-heart-outline"></i></button>
-                                        <button aria-label="Compare"><i class="ion-stats-bars"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-content text-center">
-                                <div class="product-rating">
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star gray"></i>
-                                </div>
-                                <h3><a href="product-details.html">The North Face T-Shirt</a></h3>
-                                <div class="product-price">
-                                    <span>$30.00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="product-wrap">
-                            <div class="product-img mb-20">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="../../assets/themes/bag/images/product/product-4.jpg" alt="">
-                                    <img class="hover-img" src="../../assets/themes/bag/images/product/product-4-1.jpg" alt="">
-                                </a>
-                                <div class="product-action-wrap">
-                                    <div class="product-action-left">
-                                        <button aria-label="Add To Cart"><i class="ion-ios-plus-empty"></i> Add to cart </button>
-                                    </div>
-                                    <div class="product-action-right tooltip-style">
-                                        <button aria-label="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="ion-ios-eye-outline"></i></button>
-                                        <button aria-label="Add To Wishlist"><i class="ion-ios-heart-outline"></i></button>
-                                        <button aria-label="Compare"><i class="ion-stats-bars"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-content text-center">
-                                <div class="product-rating">
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star gray"></i>
-                                </div>
-                                <h3><a href="product-details.html">Longline T-Shirt In Lined Fabric</a></h3>
-                                <div class="product-price">
-                                    <span>$31.00 - $34.00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="product-wrap">
-                            <div class="product-img mb-20">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="../../assets/themes/bag/images/product/product-6.jpg" alt="">
-                                    <img class="hover-img" src="../../assets/themes/bag/images/product/product-6-1.jpg" alt="">
-                                </a>
-                                <div class="product-action-wrap">
-                                    <div class="product-action-left">
-                                        <button aria-label="Add To Cart"><i class="ion-ios-plus-empty"></i> Add to cart </button>
-                                    </div>
-                                    <div class="product-action-right tooltip-style">
-                                        <button aria-label="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="ion-ios-eye-outline"></i></button>
-                                        <button aria-label="Add To Wishlist"><i class="ion-ios-heart-outline"></i></button>
-                                        <button aria-label="Compare"><i class="ion-stats-bars"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-content text-center">
-                                <div class="product-rating">
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star gray"></i>
-                                </div>
-                                <h3><a href="product-details.html">Patagonia Wavefarer Bucket Hat</a></h3>
-                                <div class="product-price">
-                                    <span>$39.00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="product-wrap">
-                            <div class="product-img mb-20">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="../../assets/themes/bag/images/product/product-5.jpg" alt="">
-                                    <img class="hover-img" src="../../assets/themes/bag/images/product/product-5-1.jpg" alt="">
-                                </a>
-                                <div class="product-action-wrap">
-                                    <div class="product-action-left">
-                                        <button aria-label="Add To Cart"><i class="ion-ios-plus-empty"></i> Add to cart </button>
-                                    </div>
-                                    <div class="product-action-right tooltip-style">
-                                        <button aria-label="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="ion-ios-eye-outline"></i></button>
-                                        <button aria-label="Add To Wishlist"><i class="ion-ios-heart-outline"></i></button>
-                                        <button aria-label="Compare"><i class="ion-stats-bars"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-content text-center">
-                                <div class="product-rating">
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star gray"></i>
-                                </div>
-                                <h3><a href="product-details.html">Leather The Quartz Watch</a></h3>
-                                <div class="product-price">
-                                    <span>$34.00 - $64.00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="product-wrap">
-                            <div class="product-img mb-20">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="../../assets/themes/bag/images/product/product-6.jpg" alt="">
-                                    <img class="hover-img" src="../../assets/themes/bag/images/product/product-6-1.jpg" alt="">
-                                </a>
-                                <div class="product-action-wrap">
-                                    <div class="product-action-left">
-                                        <button aria-label="Add To Cart"><i class="ion-ios-plus-empty"></i> Add to cart </button>
-                                    </div>
-                                    <div class="product-action-right tooltip-style">
-                                        <button aria-label="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="ion-ios-eye-outline"></i></button>
-                                        <button aria-label="Add To Wishlist"><i class="ion-ios-heart-outline"></i></button>
-                                        <button aria-label="Compare"><i class="ion-stats-bars"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-content text-center">
-                                <div class="product-rating">
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star gray"></i>
-                                </div>
-                                <h3><a href="/product-details">Patagonia Wavefarer Bucket Hat</a></h3>
-                                <div class="product-price">
-                                    <span>$39.00</span>
+                                    <span class="old-price">{{item.price}}</span>
+                                    <span class="new-price">{{item.priceSell}}</span>
                                 </div>
                             </div>
                         </div>
@@ -492,6 +264,7 @@
             </div>
         </div>
     </div>
+    <preview-product :product="previewProduct" />
 </template>
 
 <script>
@@ -506,53 +279,27 @@ import Swiper, {
   Thumbs,
 } from "swiper";
 Swiper.use([Autoplay, EffectCoverflow, EffectCube, Pagination, Navigation,Thumbs]);
+import DataStructures from '../../components/DataStructures';
+import ReviewStars from '../../components/ReviewStars.vue';
+import RecentProducts from '../../components/RecentProducts.vue';
+import PreviewProduct from '../../components/PreviewProduct.vue';
+import '../../assets/themes/bag/js/plugins/images-loaded.js'
 
 export default {
     name: "productDetails",
     data() {
         return {
             id: "0",
-            product: {
-                "id": "0",
-                "title": "",
-                "summary": "",
-                "skuId": "",
-                "category": "",
-                "tags": [],
-                "price": "0.00",
-                "priceSell": "0.00",
-                "stock": 0,
-                "reviews": [],
-                "description": "",
-                "imgs": []
-            },
-            relativeProducts: [{
-                "id": "0",
-                "title": "",
-                "summary": "",
-                "skuId": "",
-                "category": "",
-                "tags": [],
-                "price": "0.00",
-                "priceSell": "0.00",
-                "stock": 0,
-                "reviews": [],
-                "description": "",
-                "imgs": [],
-                "imgsPreview": {
-                    "default": {
-                        "large": "",
-                        "small": "",
-                        "thumb": ""
-                    },
-                    "hover": {
-                        "large": "",
-                        "small": "",
-                        "thumb": ""
-                    }
-                }
-            }]
+            product: DataStructures.data.product,
+            relativeProducts: [DataStructures.data.product],
+            myStars: 0,
+            previewProduct: DataStructures.data.product
         }
+    },
+    components: {
+        ReviewStars,
+        RecentProducts,
+        PreviewProduct
     },
     beforeCreate() {
         getProductDetail(this.id)
@@ -578,8 +325,8 @@ export default {
     methods: {
         onProductChanged() {
             console.log("onProductChanged");
-            
-            this.$nextTick(() => {              
+            $(".swiper-wrapper").imagesLoaded(function() {
+            // this.$nextTick(() => {
                 var productDetailsSmall = new Swiper('.product-details-small-img-slider', {
                     loop: false,
                     spaceBetween: 15,
@@ -612,7 +359,10 @@ export default {
             });
         },
         onRelativeProductChanged() {
+            console.log("onRelativeProductChanged");
+            
             this.$nextTick(() => {
+                
                 // Related products
                 var relativeProductActive = new Swiper(".relative-product-active", {
                     slidesPerView: 3,
@@ -638,16 +388,26 @@ export default {
                         },
                     },
                 });
+                // relativeProductActive.on('slideChange', function () {
+                //     console.log('slide changed');
+                // });
+
             });
         },
         hashTags: function(value, newValue) {
             // Replace hash tags with links
             return value.replace(/#(\S*)/g, newValue)
+        },
+        setStars(s) {
+            this.myStars = s;
+        },
+        setPreviewId(index) {
+            this.previewProduct = this.relativeProducts[index];
         }
     },
     watch: {
         product: 'onProductChanged', // 1
-        relativeProducts: "onRelativeProductChanged",
+        relativeProducts: "onRelativeProductChanged"
     },
 }
 </script>

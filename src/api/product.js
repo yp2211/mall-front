@@ -15,3 +15,19 @@ export function getRelatedProducts(id) {
         method:'get'
       });
 }
+
+export function getRecentProducts(id) {
+  console.log("product.js.getRecentProducts");
+  return request({
+      url:'/recentProducts.json',
+      method:'get'
+    });
+}
+
+export function getProducts(id) {
+  console.log("product.js.getProducts");
+  return request({
+      url:'/products.json',
+      method:'get'
+    });
+}

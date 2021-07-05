@@ -8,6 +8,7 @@
     "price": "24.00",
     "priceSell": "12.00",
     "stock": 20,
+    "stars": 2,
     "reviews": [
         {
             "name": "Cobus Bester",
@@ -60,5 +61,17 @@
             "small": "/src/assets/themes/bag/images/product-details/pro-details-large-img-4.jpg",
             "thumb": "/src/assets/themes/bag/images/product-details/pro-details-large-img-4.jpg"
         }
-    ]
+    ],
+    "imgsPreview": {
+        "default": {
+            "large": "/src/assets/themes/bag/images/product-details/product-3.jpg",
+            "small": "/src/assets/themes/bag/images/product-details/product-3.jpg",
+            "thumb": "/src/assets/themes/bag/images/product-details/product-3.jpg"
+        },
+        "hover": {
+            "large": "/src/assets/themes/bag/images/product-details/product-3-1.jpg",
+            "small": "/src/assets/themes/bag/images/product-details/product-3-1.jpg",
+            "thumb": "/src/assets/themes/bag/images/product-details/product-3-1.jpg"
+        }
+    }
 }

@@ -1,7 +1,7 @@
 [
     {
         "id": 0,
-        "title": "Satchel In Washed Navy Canvas",
+        "title": "Longline T-Shirt In Lined Fabric",
         "summary": "The main compartment of our bag is made using only two large pieces of 100% full-grain boot leather. Two outside pockets for quick access to gear. Shoulder straps are adjustable from both ends and flair out at the bottom to accommodate all body types. Rivets at all stress points",
         "skuId": "#ABC123456",
         "category": "Hats",
@@ -67,10 +67,10 @@
             "default": {
                 "large": "/src/assets/themes/bag/images/product/product-1.jpg",
                 "small": "/src/assets/themes/bag/images/product/product-1.jpg",
-                "thumb": "/src/assets/themes/bag/images/product/product-1.jpg"
+                "thumb": "/src/assets/themes/bag/images/product/shop-sidebar-1.jpg"
             },
             "hover": {
-                "large": "/src/assets/themes/bag/images/product/product-1-1.jpg",
+                "larg1": "/src/assets/themes/bag/images/product/product-1-1.jpg",
                 "small": "/src/assets/themes/bag/images/product/product-1-1.jpg",
                 "thumb": "/src/assets/themes/bag/images/product/product-1-1.jpg"
             }
