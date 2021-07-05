@@ -18,7 +18,7 @@
         <div class="row align-items-center">
           <div class="col-xl-2 col-lg-2">
             <div class="logo">
-              <a href="index.html"
+              <a href="/index"
                 ><img
                   src="../assets/themes/bag/images/logo/logo-black.png"
                   alt="logo"
@@ -30,14 +30,14 @@
               <nav>
                 <ul>
                   <li>
-                    <a href="index.html"
+                    <a href="/index"
                       >Home <i class="ion-ios-arrow-down"></i
                     ></a>
                     <ul class="mega-menu-style-1 mega-menu-width2">
                       <li class="mega-menu-sub-width33">
                         <a class="menu-title" href="#">Home Column #1</a>
                         <ul>
-                          <li><a href="index.html">Home Default</a></li>
+                          <li><a href="/index">Home Default</a></li>
                           <li><a href="index-boxed.html">Home Boxed</a></li>
                           <li><a href="index-shoes-v1.html">Home Shoes </a></li>
                           <li><a href="index-bag.html">Home Bag </a></li>
@@ -490,7 +490,7 @@
         <div class="row align-items-center">
           <div class="col-md-4 col-3">
             <div class="logo">
-              <a href="index.html"
+              <a href="/index"
                 ><img
                   src="../assets/themes/bag/images/logo/logo-black-3.png"
                   alt="logo"
@@ -714,7 +714,7 @@
                 <li>
                   <a href="#">Home Column #1</a>
                   <ul>
-                    <li><a href="index.html">Home Default</a></li>
+                    <li><a href="/index">Home Default</a></li>
                     <li><a href="index-boxed.html">Home Boxed</a></li>
                     <li><a href="index-shoes-v1.html">Home Shoes </a></li>
                     <li><a href="index-bag.html">Home Bag </a></li>
@@ -981,9 +981,11 @@
 </template>
 
 <script>
+console.log("HeaderArea2.vue Ln.986")
 import "../assets/themes/bag/js/vendor/bootstrap.min.js";
 import "../assets/themes/bag/js/plugins/slinky.min.js";
 import { slinkyForVue } from "./slinky";
+import "../assets/themes/bag/js/plugins/easyzoom.js";
 
 export default {
   name: "header-area2",
@@ -1040,6 +1042,7 @@ export default {
   },
   mounted() {
     slinkyForVue();
+    
   },
 };
 </script>

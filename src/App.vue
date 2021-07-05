@@ -3,7 +3,7 @@
 </template>
 
 <script>
-// import "./assets/themes/bag/js/main";
+console.log("App.vue Ln.6")
 
 export default {
   name: 'App',

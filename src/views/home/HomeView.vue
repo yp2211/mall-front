@@ -14,7 +14,7 @@ export default {
     components: { HeaderArea2, BottomFooter2 },
     name: 'home-view',
     mounted() {
-        console.log(process.env);
+        // console.log(process.env);
     }
 }
 </script>
@@ -28,8 +28,8 @@ export default {
 /*@import '../../assets/themes/bag/css/plugins/select2.min.css';
 @import '../../assets/themes/bag/css/plugins/nice-select.css';*/
 @import '../../assets/themes/bag/css/plugins/animate.css';
-/*@import '../../assets/themes/bag/css/plugins/magnific-popup.css';
-@import '../../assets/themes/bag/css/plugins/easyzoom.css';*/
+/*@import '../../assets/themes/bag/css/plugins/magnific-popup.css';*/
+@import '../../assets/themes/bag/css/plugins/easyzoom.css';
 @import '../../assets/themes/bag/css/plugins/slinky.css';
 /* @import '../../assets/themes/bag/css/plugins/jquery-ui.css'; */
 /* @import '../../assets/themes/bag/css/plugins/jquery.mb.ytplayer.min.css'; */
