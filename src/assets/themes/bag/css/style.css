@@ -26990,10 +26990,16 @@ input[type="submit"] {
   color: #000000;
 }
 
-.wishlist-table-content .table-content table tbody > tr td.stock-status span {
+.wishlist-table-content .table-content table tbody > tr td.stock-status-in span {
   font-size: 14px;
   font-weight: 500;
   color: #9c3;
+}
+
+.wishlist-table-content .table-content table tbody > tr td.stock-status-out span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ccc;
 }
 
 .wishlist-table-content .table-content table tbody > tr td.product-remove a {
@@ -27047,6 +27053,14 @@ input[type="submit"] {
 
 .wishlist-table-content .table-content table tbody > tr td.wishlist-cart a:hover {
   background-color: #000000;
+}
+
+.wishlist-table-content .table-content table tbody > tr td.wishlist-cart-disabled a {
+  color: #ffffff;
+  background-color: #ccc;
+}
+.wishlist-table-content .table-content table tbody > tr td.wishlist-cart-disabled a:hover {
+  background-color: #ccc;
 }
 
 /*-------- 26. Login register style ---------*/

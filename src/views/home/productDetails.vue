@@ -233,7 +233,7 @@
                     <div class="swiper-slide" v-for="(item, index) in relativeProducts" :key="index">
                         <div class="product-wrap">
                             <div class="product-img mb-20">
-                                <a :href="`/product-details/${item.id}`">
+                                <a :href="`/product/${item.pid}`">
                                     <img class="default-img" :src="item.imgsPreview.default.large" alt="">
                                     <img class="hover-img" :src="item.imgsPreview.hover.large" alt="">
                                 </a>
@@ -252,7 +252,7 @@
                                 <div class="product-rating">
                                     <review-stars :stars="item.stars"></review-stars>
                                 </div>
-                                <h3><a :href="`/product-details/${item.id}`">{{item.title}}</a></h3>
+                                <h3><a :href="`/product/${item.pid}`">{{item.title}}</a></h3>
                                 <div class="product-price">
                                     <span class="old-price">{{item.price}}</span>
                                     <span class="new-price">{{item.priceSell}}</span>
@@ -289,7 +289,7 @@ export default {
     name: "productDetails",
     data() {
         return {
-            id: "0",
+            pid: "0",
             product: DataStructures.data.product,
             relativeProducts: [DataStructures.data.product],
             myStars: 0,
@@ -302,7 +302,7 @@ export default {
         PreviewProduct
     },
     beforeCreate() {
-        getProductDetail(this.id)
+        getProductDetail(this.pid)
         .then(response => {
             this.product = response.data;
         })
@@ -311,7 +311,7 @@ export default {
         }); 
 
 
-        getRelatedProducts(this.id)
+        getRelatedProducts(this.pid)
         .then(response => {
             this.relativeProducts = response.data;
         })

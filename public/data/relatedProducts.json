@@ -1,6 +1,6 @@
 [
     {
-        "id": 0,
+        "pid": 0,
         "title": "Satchel In Washed Navy Canvas",
         "summary": "The main compartment of our bag is made using only two large pieces of 100% full-grain boot leather. Two outside pockets for quick access to gear. Shoulder straps are adjustable from both ends and flair out at the bottom to accommodate all body types. Rivets at all stress points",
         "skuId": "#ABC123456",
@@ -77,7 +77,7 @@
         }
     },
     {
-        "id": 1,
+        "pid": 1,
         "title": "The North Face T-Shirt",
         "summary": "The main compartment of our bag is made using only two large pieces of 100% full-grain boot leather. Two outside pockets for quick access to gear. Shoulder straps are adjustable from both ends and flair out at the bottom to accommodate all body types. Rivets at all stress points",
         "skuId": "#ABC123456",
@@ -154,7 +154,7 @@
         }
     },
     {
-        "id": 2,
+        "pid": 2,
         "title": "Longline T-Shirt In Lined Fabric",
         "summary": "The main compartment of our bag is made using only two large pieces of 100% full-grain boot leather. Two outside pockets for quick access to gear. Shoulder straps are adjustable from both ends and flair out at the bottom to accommodate all body types. Rivets at all stress points",
         "skuId": "#ABC123456",
@@ -231,7 +231,7 @@
         }
     },
     {
-        "id": 3,
+        "pid": 3,
         "title": "Patagonia Wavefarer Bucket Hat",
         "summary": "The main compartment of our bag is made using only two large pieces of 100% full-grain boot leather. Two outside pockets for quick access to gear. Shoulder straps are adjustable from both ends and flair out at the bottom to accommodate all body types. Rivets at all stress points",
         "skuId": "#ABC123456",
@@ -308,7 +308,7 @@
         }
     },
     {
-        "id": 4,
+        "pid": 4,
         "title": "Leather The Quartz Watch",
         "summary": "The main compartment of our bag is made using only two large pieces of 100% full-grain boot leather. Two outside pockets for quick access to gear. Shoulder straps are adjustable from both ends and flair out at the bottom to accommodate all body types. Rivets at all stress points",
         "skuId": "#ABC123456",
@@ -385,7 +385,7 @@
         }
     },
     {
-        "id": 5,
+        "pid": 5,
         "title": "Patagonia Wavefarer Bucket Hat",
         "summary": "The main compartment of our bag is made using only two large pieces of 100% full-grain boot leather. Two outside pockets for quick access to gear. Shoulder straps are adjustable from both ends and flair out at the bottom to accommodate all body types. Rivets at all stress points",
         "skuId": "#ABC123456",

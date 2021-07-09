@@ -8,7 +8,7 @@ export function getProductDetail(id) {
       });
 }
 
-export function getRelatedProducts(id) {
+export function getRelatedProducts(pid) {
     console.log("product.js.getRelatedProducts");
     return request({
         url:'/relatedProducts.json',
@@ -16,7 +16,7 @@ export function getRelatedProducts(id) {
       });
 }
 
-export function getRecentProducts(id) {
+export function getRecentProducts(pid) {
   console.log("product.js.getRecentProducts");
   return request({
       url:'/recentProducts.json',
@@ -24,10 +24,26 @@ export function getRecentProducts(id) {
     });
 }
 
-export function getProducts(id) {
+export function getProducts() {
   console.log("product.js.getProducts");
   return request({
       url:'/products.json',
+      method:'get'
+    });
+}
+
+export function getWishList(uid) {
+  console.log("product.js.getWishList");
+  return request({
+      url:'/wishlist.json',
+      method:'get'
+    });
+}
+
+export function getCompareList(uid) {
+  console.log("product.js.getCompareList");
+  return request({
+      url:'/compareProducts.json',
       method:'get'
     });
 }

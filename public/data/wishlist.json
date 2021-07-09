@@ -85,7 +85,7 @@
         "tags": ["blue","hat","men"],
         "price": "30.00",
         "priceSell": "30.00",
-        "stock": 20,
+        "stock": 0,
         "stars": 4,        
         "reviews": [
             {

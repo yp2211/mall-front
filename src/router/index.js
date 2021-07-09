@@ -26,13 +26,21 @@ const router = createRouter({
                   name: 'productGrid',
                   component: () => import('../views/home/productGrid.vue')
                 }, {
+                  path: '/product/:pid',
+                  name: 'productDetails',
+                  component: () => import('../views/home/productDetails.vue')
+                }, {
+                  path: '/wishlist',
+                  name: 'wishlist',
+                  component: () => import('../views/home/wishlist.vue')
+                }, {
+                  path: '/compare',
+                  name: 'compare',
+                  component: () => import('../views/home/compare.vue')
+                }, {
                   path: '/about',
                   name: 'about',
                   component: () => import('../views/home/about.vue')
-                }, {
-                  path: '/product-details',
-                  name: 'productDetails',
-                  component: () => import('../views/home/productDetails.vue')
                 }, {
                   path: '/404',
                   name: 'notfound',

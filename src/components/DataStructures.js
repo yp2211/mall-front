@@ -3,7 +3,7 @@ export default {
     name: 'DataStructures',
     data: {
         product: {
-            "id": "0",
+            "pid": "0",
             "title": "",
             "summary": "",
             "skuId": "",
