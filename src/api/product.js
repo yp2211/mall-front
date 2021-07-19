@@ -2,6 +2,7 @@ import request from '../utils/request'
 
 export function getProductDetail(id) {
     console.log("product.js.getProductDetail");
+    console.log("pid:"+id);
     return request({
         url:'/product.json',
         method:'get'

@@ -45,12 +45,12 @@
                                     </tr>
                                     <tr>
                                         <td class="first-column">Add to cart</td>
-                                        <td><a href="cart.html" class="check-btn" v-for="(item, index) in products" :key="index" :class="{'disabled' : item.stock}">Add to Cart</a></td>
+                                        <td v-for="(item, index) in products" :key="index"><a href="cart" class="check-btn" :class="{'disabled' : (item.stock <= 0)}">Add to Cart</a></td>
                                     </tr>
                                     <tr>
                                         <td class="first-column">Rating</td>
                                         <td class="pro-ratting" v-for="(item, index) in products" :key="index">
-                                            <review-stars :stars="item.stars" />
+                                            <review-stars :stars="2"></review-stars>
                                         </td>
                                     </tr>
                                     <tr>
@@ -78,7 +78,7 @@ export default {
     name: "compare",
     data() {
         return {
-            products: [DataStructures.product]
+            products: [DataStructures.data.product]
         }
     },
     components: {

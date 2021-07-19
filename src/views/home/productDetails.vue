@@ -289,7 +289,7 @@ export default {
     name: "productDetails",
     data() {
         return {
-            pid: "0",
+            pid: this.$route.params.pid,
             product: DataStructures.data.product,
             relativeProducts: [DataStructures.data.product],
             myStars: 0,
@@ -302,6 +302,10 @@ export default {
         PreviewProduct
     },
     beforeCreate() {
+    },
+    mounted() {
+        console.log("mounted");
+        
         getProductDetail(this.pid)
         .then(response => {
             this.product = response.data;
@@ -310,7 +314,6 @@ export default {
             console.log(error);
         }); 
 
-
         getRelatedProducts(this.pid)
         .then(response => {
             this.relativeProducts = response.data;
@@ -318,9 +321,6 @@ export default {
         .catch(function (error) {
             console.log(error);
         }); 
-    },
-    mounted() {
-        console.log("mounted");
     },
     methods: {
         onProductChanged() {

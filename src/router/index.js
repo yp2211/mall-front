@@ -30,13 +30,25 @@ const router = createRouter({
                   name: 'productDetails',
                   component: () => import('../views/home/productDetails.vue')
                 }, {
+                  path: '/cart',
+                  name: 'cart',
+                  component: () => import('../views/home/cart.vue')
+                }, {
                   path: '/wishlist',
                   name: 'wishlist',
                   component: () => import('../views/home/wishlist.vue')
                 }, {
+                  path: '/checkout',
+                  name: 'checkout',
+                  component: () => import('../views/home/checkout.vue')
+                }, {
+                  path: '/order-tracking',
+                  name: 'OrderTracking',
+                  component: () => import('../views/home/OrderTracking.vue')
+                }, {
                   path: '/compare',
                   name: 'compare',
-                  component: () => import('../views/home/compare.vue')
+                  component: () => import('../views/home/Compare.vue')
                 }, {
                   path: '/about',
                   name: 'about',

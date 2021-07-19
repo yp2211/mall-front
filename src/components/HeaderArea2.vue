@@ -620,8 +620,8 @@
                     <h4>Subtotal: <span>$67.00</span></h4>
                 </div>
                 <div class="cart-checkout-btn">
-                    <a class="cart" href="cart.html">view cart <i class="ion-ios-arrow-right"></i></a>
-                    <a class="checkout" href="checkout.html">checkout <i class="ion-ios-arrow-right"></i></a>
+                    <a class="cart" href="cart">view cart <i class="ion-ios-arrow-right"></i></a>
+                    <a class="checkout" href="checkout">checkout <i class="ion-ios-arrow-right"></i></a>
                 </div>
             </div>
         </div>
