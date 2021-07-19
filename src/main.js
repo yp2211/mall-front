@@ -4,14 +4,24 @@ import router from "./router";
 import i18n from './i18n';
 import axios from 'axios';
 import VueAxios from 'vue-axios';
-// import VueLazyLoad from 'vue-lazyload';
-// import VueCookie from 'vue-cookie';
-// import store from './store'
-// import path from 'path'
+// import { jQuery } from 'jquery';
+// // import VueLazyLoad from 'vue-lazyload';
+// // import VueCookie from 'vue-cookie';
+// // import store from './store'
+// // import path from 'path'
+
+// window.$=window.jQuery=window.$jQuery=jQuery;
 
 const app = createApp(App);
+
 app.use(router);
 app.use(i18n);
+// app.use(jQuery, {
+//     jQuery: jQuery,
+//     $: jQuery,
+//     $jQuery: jQuery
+// })
+console.log("main.js Ln.23")
 // app.use(store);
 // app.use({
 //     install: function(Vue, options){

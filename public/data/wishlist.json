@@ -1,0 +1,464 @@
+[
+    {
+        "pid": 0,
+        "title": "Satchel In Washed Navy Canvas",
+        "summary": "The main compartment of our bag is made using only two large pieces of 100% full-grain boot leather. Two outside pockets for quick access to gear. Shoulder straps are adjustable from both ends and flair out at the bottom to accommodate all body types. Rivets at all stress points",
+        "skuId": "#ABC123456",
+        "category": "Hats",
+        "tags": ["blue","hat","men"],
+        "price": "24.00",
+        "priceSell": "12.00",
+        "stock": 20,
+        "stars": 2,        
+        "reviews": [
+            {
+                "name": "Cobus Bester",
+                "img": "/src/assets/themes/bag/images/product-details/client-1.jpg",
+                "date": "June 7, 2013",
+                "stars": 4,
+                "content": "Wonderful quality, and an awesome design. WooThemes ftw!"
+            },
+            {
+                "name": "Andrew",
+                "img": "/src/assets/themes/bag/images/product-details/client-1.jpg",
+                "date": "June 7, 2013",
+                "stars": 5,
+                "content": "This t-shirt is awesome! Would recommend to everyone!<br />I’m ordering mine next week"
+            },
+            {
+                "name": "Cobus Bester",
+                "img": "/src/assets/themes/bag/images/product-details/client-1.jpg",
+                "date": "June 7, 2013",
+                "stars": 3,
+                "content": "Wonderful quality, and an awesome design. WooThemes ftw!"
+            }
+        ],
+        "description": "<h4>Description</h4><p>Top Quality Patagonia Wavefarer Bucket Hat for less money. 100% Cotton.</p><ul><li>Imported</li><li> Fabric has 50 UPF to inhibit harmful UV rays and HELP protect your skin</li><li> Climacool mesh panels for breathability</li><li> Moisture-wicking sweatband inside helps keep you dry</li><li> Non-glare undervisor</li></ul>",
+        "additionalInfomation": [
+            "<h5>Additional information</h5>",
+            "<ul>",
+            "    <li><span>Color:</span>Blue, Carmine, Copper, Green</li>",
+            "    <li class='gray'><span>Size:</span>L, M, S, XL, XXL</li>",
+            "</ul>"
+        ],
+        "imgs": [
+            {
+                "large": "/src/assets/themes/bag/images/product-details/pro-details-b-large-img-1.jpg",
+                "small": "/src/assets/themes/bag/images/product-details/pro-details-large-img-1.jpg",
+                "thumb": "/src/assets/themes/bag/images/product-details/pro-details-large-img-1.jpg"
+            },
+            {
+                "large": "/src/assets/themes/bag/images/product-details/pro-details-b-large-img-2.jpg",
+                "small": "/src/assets/themes/bag/images/product-details/pro-details-large-img-2.jpg",
+                "thumb": "/src/assets/themes/bag/images/product-details/pro-details-large-img-2.jpg"
+            },
+            {
+                "large": "/src/assets/themes/bag/images/product-details/pro-details-b-large-img-3.jpg",
+                "small": "/src/assets/themes/bag/images/product-details/pro-details-large-img-3.jpg",
+                "thumb": "/src/assets/themes/bag/images/product-details/pro-details-large-img-3.jpg"
+            },
+            {
+                "large": "/src/assets/themes/bag/images/product-details/pro-details-b-large-img-4.jpg",
+                "small": "/src/assets/themes/bag/images/product-details/pro-details-large-img-4.jpg",
+                "thumb": "/src/assets/themes/bag/images/product-details/pro-details-large-img-4.jpg"
+            }
+        ],
+        "imgsPreview": {
+            "default": {
+                "large": "/src/assets/themes/bag/images/product/product-1.jpg",
+                "small": "/src/assets/themes/bag/images/product/product-1.jpg",
+                "thumb": "/src/assets/themes/bag/images/product/product-1.jpg"
+            },
+            "hover": {
+                "large": "/src/assets/themes/bag/images/product/product-1-1.jpg",
+                "small": "/src/assets/themes/bag/images/product/product-1-1.jpg",
+                "thumb": "/src/assets/themes/bag/images/product/product-1-1.jpg"
+            }
+        }
+    },
+    {
+        "pid": 1,
+        "title": "The North Face T-Shirt",
+        "summary": "The main compartment of our bag is made using only two large pieces of 100% full-grain boot leather. Two outside pockets for quick access to gear. Shoulder straps are adjustable from both ends and flair out at the bottom to accommodate all body types. Rivets at all stress points",
+        "skuId": "#ABC123456",
+        "category": "Hats",
+        "tags": ["blue","hat","men"],
+        "price": "30.00",
+        "priceSell": "30.00",
+        "stock": 0,
+        "stars": 4,        
+        "reviews": [
+            {
+                "name": "Cobus Bester",
+                "img": "/src/assets/themes/bag/images/product-details/client-1.jpg",
+                "date": "June 7, 2013",
+                "stars": 4,
+                "content": "Wonderful quality, and an awesome design. WooThemes ftw!"
+            },
+            {
+                "name": "Andrew",
+                "img": "/src/assets/themes/bag/images/product-details/client-1.jpg",
+                "date": "June 7, 2013",
+                "stars": 5,
+                "content": "This t-shirt is awesome! Would recommend to everyone!<br />I’m ordering mine next week"
+            },
+            {
+                "name": "Cobus Bester",
+                "img": "/src/assets/themes/bag/images/product-details/client-1.jpg",
+                "date": "June 7, 2013",
+                "stars": 3,
+                "content": "Wonderful quality, and an awesome design. WooThemes ftw!"
+            }
+        ],
+        "description": "<h4>Description</h4><p>Top Quality Patagonia Wavefarer Bucket Hat for less money. 100% Cotton.</p><ul><li>Imported</li><li> Fabric has 50 UPF to inhibit harmful UV rays and HELP protect your skin</li><li> Climacool mesh panels for breathability</li><li> Moisture-wicking sweatband inside helps keep you dry</li><li> Non-glare undervisor</li></ul>",
+        "additionalInfomation": [
+            "<h5>Additional information</h5>",
+            "<ul>",
+            "    <li><span>Color:</span>Blue, Carmine, Copper, Green</li>",
+            "    <li class='gray'><span>Size:</span>L, M, S, XL, XXL</li>",
+            "</ul>"
+        ],
+        "imgs": [
+            {
+                "large": "/src/assets/themes/bag/images/product-details/pro-details-b-large-img-1.jpg",
+                "small": "/src/assets/themes/bag/images/product-details/pro-details-large-img-1.jpg",
+                "thumb": "/src/assets/themes/bag/images/product-details/pro-details-large-img-1.jpg"
+            },
+            {
+                "large": "/src/assets/themes/bag/images/product-details/pro-details-b-large-img-2.jpg",
+                "small": "/src/assets/themes/bag/images/product-details/pro-details-large-img-2.jpg",
+                "thumb": "/src/assets/themes/bag/images/product-details/pro-details-large-img-2.jpg"
+            },
+            {
+                "large": "/src/assets/themes/bag/images/product-details/pro-details-b-large-img-3.jpg",
+                "small": "/src/assets/themes/bag/images/product-details/pro-details-large-img-3.jpg",
+                "thumb": "/src/assets/themes/bag/images/product-details/pro-details-large-img-3.jpg"
+            },
+            {
+                "large": "/src/assets/themes/bag/images/product-details/pro-details-b-large-img-4.jpg",
+                "small": "/src/assets/themes/bag/images/product-details/pro-details-large-img-4.jpg",
+                "thumb": "/src/assets/themes/bag/images/product-details/pro-details-large-img-4.jpg"
+            }
+        ],
+        "imgsPreview": {
+            "default": {
+                "large": "/src/assets/themes/bag/images/product/product-2.jpg",
+                "small": "/src/assets/themes/bag/images/product/product-2.jpg",
+                "thumb": "/src/assets/themes/bag/images/product/product-2.jpg"
+            },
+            "hover": {
+                "large": "/src/assets/themes/bag/images/product/product-2-1.jpg",
+                "small": "/src/assets/themes/bag/images/product/product-2-1.jpg",
+                "thumb": "/src/assets/themes/bag/images/product/product-2-1.jpg"
+            }
+        }
+    },
+    {
+        "pid": 2,
+        "title": "Longline T-Shirt In Lined Fabric",
+        "summary": "The main compartment of our bag is made using only two large pieces of 100% full-grain boot leather. Two outside pockets for quick access to gear. Shoulder straps are adjustable from both ends and flair out at the bottom to accommodate all body types. Rivets at all stress points",
+        "skuId": "#ABC123456",
+        "category": "Hats",
+        "tags": ["blue","hat","men"],
+        "price": "34.00",
+        "priceSell": "$31.00 - $34.00",
+        "stock": 20,
+        "stars": 5,        
+        "reviews": [
+            {
+                "name": "Cobus Bester",
+                "img": "/src/assets/themes/bag/images/product-details/client-1.jpg",
+                "date": "June 7, 2013",
+                "stars": 4,
+                "content": "Wonderful quality, and an awesome design. WooThemes ftw!"
+            },
+            {
+                "name": "Andrew",
+                "img": "/src/assets/themes/bag/images/product-details/client-1.jpg",
+                "date": "June 7, 2013",
+                "stars": 5,
+                "content": "This t-shirt is awesome! Would recommend to everyone!<br />I’m ordering mine next week"
+            },
+            {
+                "name": "Cobus Bester",
+                "img": "/src/assets/themes/bag/images/product-details/client-1.jpg",
+                "date": "June 7, 2013",
+                "stars": 3,
+                "content": "Wonderful quality, and an awesome design. WooThemes ftw!"
+            }
+        ],
+        "description": "<h4>Description</h4><p>Top Quality Patagonia Wavefarer Bucket Hat for less money. 100% Cotton.</p><ul><li>Imported</li><li> Fabric has 50 UPF to inhibit harmful UV rays and HELP protect your skin</li><li> Climacool mesh panels for breathability</li><li> Moisture-wicking sweatband inside helps keep you dry</li><li> Non-glare undervisor</li></ul>",
+        "additionalInfomation": [
+            "<h5>Additional information</h5>",
+            "<ul>",
+            "    <li><span>Color:</span>Blue, Carmine, Copper, Green</li>",
+            "    <li class='gray'><span>Size:</span>L, M, S, XL, XXL</li>",
+            "</ul>"
+        ],
+        "imgs": [
+            {
+                "large": "/src/assets/themes/bag/images/product-details/pro-details-b-large-img-1.jpg",
+                "small": "/src/assets/themes/bag/images/product-details/pro-details-large-img-1.jpg",
+                "thumb": "/src/assets/themes/bag/images/product-details/pro-details-large-img-1.jpg"
+            },
+            {
+                "large": "/src/assets/themes/bag/images/product-details/pro-details-b-large-img-2.jpg",
+                "small": "/src/assets/themes/bag/images/product-details/pro-details-large-img-2.jpg",
+                "thumb": "/src/assets/themes/bag/images/product-details/pro-details-large-img-2.jpg"
+            },
+            {
+                "large": "/src/assets/themes/bag/images/product-details/pro-details-b-large-img-3.jpg",
+                "small": "/src/assets/themes/bag/images/product-details/pro-details-large-img-3.jpg",
+                "thumb": "/src/assets/themes/bag/images/product-details/pro-details-large-img-3.jpg"
+            },
+            {
+                "large": "/src/assets/themes/bag/images/product-details/pro-details-b-large-img-4.jpg",
+                "small": "/src/assets/themes/bag/images/product-details/pro-details-large-img-4.jpg",
+                "thumb": "/src/assets/themes/bag/images/product-details/pro-details-large-img-4.jpg"
+            }
+        ],
+        "imgsPreview": {
+            "default": {
+                "large": "/src/assets/themes/bag/images/product/product-3.jpg",
+                "small": "/src/assets/themes/bag/images/product/product-3.jpg",
+                "thumb": "/src/assets/themes/bag/images/product/product-3.jpg"
+            },
+            "hover": {
+                "large": "/src/assets/themes/bag/images/product/product-3-1.jpg",
+                "small": "/src/assets/themes/bag/images/product/product-3-1.jpg",
+                "thumb": "/src/assets/themes/bag/images/product/product-3-1.jpg"
+            }
+        }
+    },
+    {
+        "pid": 3,
+        "title": "Patagonia Wavefarer Bucket Hat",
+        "summary": "The main compartment of our bag is made using only two large pieces of 100% full-grain boot leather. Two outside pockets for quick access to gear. Shoulder straps are adjustable from both ends and flair out at the bottom to accommodate all body types. Rivets at all stress points",
+        "skuId": "#ABC123456",
+        "category": "Hats",
+        "tags": ["blue","hat","men"],
+        "price": "$39.00",
+        "priceSell": "$39.00",
+        "stock": 20,
+        "stars": 4,        
+        "reviews": [
+            {
+                "name": "Cobus Bester",
+                "img": "/src/assets/themes/bag/images/product-details/client-1.jpg",
+                "date": "June 7, 2013",
+                "stars": 4,
+                "content": "Wonderful quality, and an awesome design. WooThemes ftw!"
+            },
+            {
+                "name": "Andrew",
+                "img": "/src/assets/themes/bag/images/product-details/client-1.jpg",
+                "date": "June 7, 2013",
+                "stars": 5,
+                "content": "This t-shirt is awesome! Would recommend to everyone!<br />I’m ordering mine next week"
+            },
+            {
+                "name": "Cobus Bester",
+                "img": "/src/assets/themes/bag/images/product-details/client-1.jpg",
+                "date": "June 7, 2013",
+                "stars": 3,
+                "content": "Wonderful quality, and an awesome design. WooThemes ftw!"
+            }
+        ],
+        "description": "<h4>Description</h4><p>Top Quality Patagonia Wavefarer Bucket Hat for less money. 100% Cotton.</p><ul><li>Imported</li><li> Fabric has 50 UPF to inhibit harmful UV rays and HELP protect your skin</li><li> Climacool mesh panels for breathability</li><li> Moisture-wicking sweatband inside helps keep you dry</li><li> Non-glare undervisor</li></ul>",
+        "additionalInfomation": [
+            "<h5>Additional information</h5>",
+            "<ul>",
+            "    <li><span>Color:</span>Blue, Carmine, Copper, Green</li>",
+            "    <li class='gray'><span>Size:</span>L, M, S, XL, XXL</li>",
+            "</ul>"
+        ],
+        "imgs": [
+            {
+                "large": "/src/assets/themes/bag/images/product-details/pro-details-b-large-img-1.jpg",
+                "small": "/src/assets/themes/bag/images/product-details/pro-details-large-img-1.jpg",
+                "thumb": "/src/assets/themes/bag/images/product-details/pro-details-large-img-1.jpg"
+            },
+            {
+                "large": "/src/assets/themes/bag/images/product-details/pro-details-b-large-img-2.jpg",
+                "small": "/src/assets/themes/bag/images/product-details/pro-details-large-img-2.jpg",
+                "thumb": "/src/assets/themes/bag/images/product-details/pro-details-large-img-2.jpg"
+            },
+            {
+                "large": "/src/assets/themes/bag/images/product-details/pro-details-b-large-img-3.jpg",
+                "small": "/src/assets/themes/bag/images/product-details/pro-details-large-img-3.jpg",
+                "thumb": "/src/assets/themes/bag/images/product-details/pro-details-large-img-3.jpg"
+            },
+            {
+                "large": "/src/assets/themes/bag/images/product-details/pro-details-b-large-img-4.jpg",
+                "small": "/src/assets/themes/bag/images/product-details/pro-details-large-img-4.jpg",
+                "thumb": "/src/assets/themes/bag/images/product-details/pro-details-large-img-4.jpg"
+            }
+        ],
+        "imgsPreview": {
+            "default": {
+                "large": "/src/assets/themes/bag/images/product/product-4.jpg",
+                "small": "/src/assets/themes/bag/images/product/product-4.jpg",
+                "thumb": "/src/assets/themes/bag/images/product/product-4.jpg"
+            },
+            "hover": {
+                "large": "/src/assets/themes/bag/images/product/product-4-1.jpg",
+                "small": "/src/assets/themes/bag/images/product/product-4-1.jpg",
+                "thumb": "/src/assets/themes/bag/images/product/product-4-1.jpg"
+            }
+        }
+    },
+    {
+        "pid": 4,
+        "title": "Leather The Quartz Watch",
+        "summary": "The main compartment of our bag is made using only two large pieces of 100% full-grain boot leather. Two outside pockets for quick access to gear. Shoulder straps are adjustable from both ends and flair out at the bottom to accommodate all body types. Rivets at all stress points",
+        "skuId": "#ABC123456",
+        "category": "Hats",
+        "tags": ["blue","hat","men"],
+        "price": "$39.00",
+        "priceSell": "$34.00 - $64.00",
+        "stock": 20,
+        "stars": 4,        
+        "reviews": [
+            {
+                "name": "Cobus Bester",
+                "img": "/src/assets/themes/bag/images/product-details/client-1.jpg",
+                "date": "June 7, 2013",
+                "stars": 4,
+                "content": "Wonderful quality, and an awesome design. WooThemes ftw!"
+            },
+            {
+                "name": "Andrew",
+                "img": "/src/assets/themes/bag/images/product-details/client-1.jpg",
+                "date": "June 7, 2013",
+                "stars": 5,
+                "content": "This t-shirt is awesome! Would recommend to everyone!<br />I’m ordering mine next week"
+            },
+            {
+                "name": "Cobus Bester",
+                "img": "/src/assets/themes/bag/images/product-details/client-1.jpg",
+                "date": "June 7, 2013",
+                "stars": 3,
+                "content": "Wonderful quality, and an awesome design. WooThemes ftw!"
+            }
+        ],
+        "description": "<h4>Description</h4><p>Top Quality Patagonia Wavefarer Bucket Hat for less money. 100% Cotton.</p><ul><li>Imported</li><li> Fabric has 50 UPF to inhibit harmful UV rays and HELP protect your skin</li><li> Climacool mesh panels for breathability</li><li> Moisture-wicking sweatband inside helps keep you dry</li><li> Non-glare undervisor</li></ul>",
+        "additionalInfomation": [
+            "<h5>Additional information</h5>",
+            "<ul>",
+            "    <li><span>Color:</span>Blue, Carmine, Copper, Green</li>",
+            "    <li class='gray'><span>Size:</span>L, M, S, XL, XXL</li>",
+            "</ul>"
+        ],
+        "imgs": [
+            {
+                "large": "/src/assets/themes/bag/images/product-details/pro-details-b-large-img-1.jpg",
+                "small": "/src/assets/themes/bag/images/product-details/pro-details-large-img-1.jpg",
+                "thumb": "/src/assets/themes/bag/images/product-details/pro-details-large-img-1.jpg"
+            },
+            {
+                "large": "/src/assets/themes/bag/images/product-details/pro-details-b-large-img-2.jpg",
+                "small": "/src/assets/themes/bag/images/product-details/pro-details-large-img-2.jpg",
+                "thumb": "/src/assets/themes/bag/images/product-details/pro-details-large-img-2.jpg"
+            },
+            {
+                "large": "/src/assets/themes/bag/images/product-details/pro-details-b-large-img-3.jpg",
+                "small": "/src/assets/themes/bag/images/product-details/pro-details-large-img-3.jpg",
+                "thumb": "/src/assets/themes/bag/images/product-details/pro-details-large-img-3.jpg"
+            },
+            {
+                "large": "/src/assets/themes/bag/images/product-details/pro-details-b-large-img-4.jpg",
+                "small": "/src/assets/themes/bag/images/product-details/pro-details-large-img-4.jpg",
+                "thumb": "/src/assets/themes/bag/images/product-details/pro-details-large-img-4.jpg"
+            }
+        ],
+        "imgsPreview": {
+            "default": {
+                "large": "/src/assets/themes/bag/images/product/product-5.jpg",
+                "small": "/src/assets/themes/bag/images/product/product-5.jpg",
+                "thumb": "/src/assets/themes/bag/images/product/product-5.jpg"
+            },
+            "hover": {
+                "large": "/src/assets/themes/bag/images/product/product-5-1.jpg",
+                "small": "/src/assets/themes/bag/images/product/product-5-1.jpg",
+                "thumb": "/src/assets/themes/bag/images/product/product-5-1.jpg"
+            }
+        }
+    },
+    {
+        "pid": 5,
+        "title": "Patagonia Wavefarer Bucket Hat",
+        "summary": "The main compartment of our bag is made using only two large pieces of 100% full-grain boot leather. Two outside pockets for quick access to gear. Shoulder straps are adjustable from both ends and flair out at the bottom to accommodate all body types. Rivets at all stress points",
+        "skuId": "#ABC123456",
+        "category": "Hats",
+        "tags": ["blue","hat","men"],
+        "price": "$39.00",
+        "priceSell": "$39.00",
+        "stock": 20,
+        "stars": 4,        
+        "reviews": [
+            {
+                "name": "Cobus Bester",
+                "img": "/src/assets/themes/bag/images/product-details/client-1.jpg",
+                "date": "June 7, 2013",
+                "stars": 4,
+                "content": "Wonderful quality, and an awesome design. WooThemes ftw!"
+            },
+            {
+                "name": "Andrew",
+                "img": "/src/assets/themes/bag/images/product-details/client-1.jpg",
+                "date": "June 7, 2013",
+                "stars": 5,
+                "content": "This t-shirt is awesome! Would recommend to everyone!<br />I’m ordering mine next week"
+            },
+            {
+                "name": "Cobus Bester",
+                "img": "/src/assets/themes/bag/images/product-details/client-1.jpg",
+                "date": "June 7, 2013",
+                "stars": 3,
+                "content": "Wonderful quality, and an awesome design. WooThemes ftw!"
+            }
+        ],
+        "description": "<h4>Description</h4><p>Top Quality Patagonia Wavefarer Bucket Hat for less money. 100% Cotton.</p><ul><li>Imported</li><li> Fabric has 50 UPF to inhibit harmful UV rays and HELP protect your skin</li><li> Climacool mesh panels for breathability</li><li> Moisture-wicking sweatband inside helps keep you dry</li><li> Non-glare undervisor</li></ul>",
+        "additionalInfomation": [
+            "<h5>Additional information</h5>",
+            "<ul>",
+            "    <li><span>Color:</span>Blue, Carmine, Copper, Green</li>",
+            "    <li class='gray'><span>Size:</span>L, M, S, XL, XXL</li>",
+            "</ul>"
+        ],
+        "imgs": [
+            {
+                "large": "/src/assets/themes/bag/images/product-details/pro-details-b-large-img-1.jpg",
+                "small": "/src/assets/themes/bag/images/product-details/pro-details-large-img-1.jpg",
+                "thumb": "/src/assets/themes/bag/images/product-details/pro-details-large-img-1.jpg"
+            },
+            {
+                "large": "/src/assets/themes/bag/images/product-details/pro-details-b-large-img-2.jpg",
+                "small": "/src/assets/themes/bag/images/product-details/pro-details-large-img-2.jpg",
+                "thumb": "/src/assets/themes/bag/images/product-details/pro-details-large-img-2.jpg"
+            },
+            {
+                "large": "/src/assets/themes/bag/images/product-details/pro-details-b-large-img-3.jpg",
+                "small": "/src/assets/themes/bag/images/product-details/pro-details-large-img-3.jpg",
+                "thumb": "/src/assets/themes/bag/images/product-details/pro-details-large-img-3.jpg"
+            },
+            {
+                "large": "/src/assets/themes/bag/images/product-details/pro-details-b-large-img-4.jpg",
+                "small": "/src/assets/themes/bag/images/product-details/pro-details-large-img-4.jpg",
+                "thumb": "/src/assets/themes/bag/images/product-details/pro-details-large-img-4.jpg"
+            }
+        ],
+        "imgsPreview": {
+            "default": {
+                "large": "/src/assets/themes/bag/images/product/product-6.jpg",
+                "small": "/src/assets/themes/bag/images/product/product-6.jpg",
+                "thumb": "/src/assets/themes/bag/images/product/product-6.jpg"
+            },
+            "hover": {
+                "large": "/src/assets/themes/bag/images/product/product-6-1.jpg",
+                "small": "/src/assets/themes/bag/images/product/product-6-1.jpg",
+                "thumb": "/src/assets/themes/bag/images/product/product-6-1.jpg"
+            }
+        }
+    }
+]

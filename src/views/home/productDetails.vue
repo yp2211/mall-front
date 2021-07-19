@@ -7,48 +7,12 @@
                         <div class="col-lg-5">
                             <div class="product-details-img-wrap product-details-img-mrg">
                                 <div class="swiper-container product-details-big-img-slider-2 product-details-big-img-style">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
+                                   <div class="swiper-wrapper">
+                                        <div class="swiper-slide" v-for="(img, index) in product.imgs" v-bind:key="index">
                                             <div class="easyzoom-style">
                                                 <div class="easyzoom easyzoom--overlay">
-                                                    <a href="../../assets/themes/bag/images/product-details/pro-details-b-large-img-1.jpg">
-                                                        <img src="../../assets/themes/bag/images/product-details/pro-details-large-img-1.jpg" alt="">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="easyzoom-style">
-                                                <div class="easyzoom easyzoom--overlay">
-                                                    <a href="../../assets/themes/bag/images/product-details/pro-details-b-large-img-2.jpg">
-                                                        <img src="../../assets/themes/bag/images/product-details/pro-details-large-img-2.jpg" alt="">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="easyzoom-style">
-                                                <div class="easyzoom easyzoom--overlay">
-                                                    <a href="../../assets/themes/bag/images/product-details/pro-details-b-large-img-3.jpg">
-                                                        <img src="../../assets/themes/bag/images/product-details/pro-details-large-img-3.jpg" alt="">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="easyzoom-style">
-                                                <div class="easyzoom easyzoom--overlay">
-                                                    <a href="../../assets/themes/bag/images/product-details/pro-details-b-large-img-4.jpg">
-                                                        <img src="../../assets/themes/bag/images/product-details/pro-details-large-img-4.jpg" alt="">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="easyzoom-style">
-                                                <div class="easyzoom easyzoom--overlay">
-                                                    <a href="../../assets/themes/bag/images/product-details/pro-details-b-large-img-2.jpg">
-                                                        <img src="../../assets/themes/bag/images/product-details/pro-details-large-img-2.jpg" alt="">
+                                                    <a :href="img.large">
+                                                        <img :src="img.small" alt="">
                                                     </a>
                                                 </div>
                                             </div>
@@ -59,30 +23,10 @@
                                 </div>
                                 <div class="swiper-container product-details-small-img-slider product-details-small-img-slider-style">
                                     <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
+                                        <div class="swiper-slide" v-for="(img, index) in product.imgs" v-bind:key="index">
                                             <div class="product-details-small-img">
-                                                <img src="../../assets/themes/bag/images/product-details/pro-details-large-img-1.jpg" alt="Product Thumnail">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="product-details-small-img">
-                                                <img src="../../assets/themes/bag/images/product-details/pro-details-large-img-2.jpg" alt="Product Thumnail">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="product-details-small-img">
-                                                <img src="../../assets/themes/bag/images/product-details/pro-details-large-img-3.jpg" alt="Product Thumnail">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="product-details-small-img">
-                                                <img src="../../assets/themes/bag/images/product-details/pro-details-large-img-4.jpg" alt="Product Thumnail">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="product-details-small-img">
-                                                <img src="../../assets/themes/bag/images/product-details/pro-details-large-img-2.jpg" alt="Product Thumnail">
-                                            </div>
+                                                <img :src="img.thumb" alt="Product Thumnail">
+                                            </div>                                            
                                         </div>
                                     </div>
                                 </div>
@@ -98,29 +42,28 @@
                                         <a href="#"><i class="ion-ios-arrow-forward"></i></a>
                                     </div>
                                 </div>
-                                <h2>Satchel In Washed Navy Canvas</h2>
+                                <h2>{{ product.title }}</h2>
                                 <div class="product-details-review-wrap">
                                     <div class="product-details-review">
                                         <div class="product-rating">
-                                            <i class="ion-android-star"></i>
-                                            <i class="ion-android-star"></i>
-                                            <i class="ion-android-star"></i>
-                                            <i class="ion-android-star"></i>
-                                            <i class="ion-android-star gray"></i>
+                                            <review-stars :stars="product.stars"></review-stars>
                                         </div>
-                                        <span>3 reviews</span>
+                                        <span>{{product.reviews.length}} reviews</span>
                                     </div>
                                     <div class="write-review">
                                         <a href="#">Write your review</a>
                                     </div>
                                 </div>
                                 <div class="product-details-price">
-                                    <span class="old-price">$24.00</span>
-                                    <span class="new-price">$12.00</span>
+                                    <span class="old-price">${{product.price}}</span>
+                                    <span class="new-price">${{product.priceSell}}</span>
                                 </div>
-                                <p>The main compartment of our bag is made using only two large pieces of 100% full-grain boot leather. Two outside pockets for quick access to gear. Shoulder straps are adjustable from both ends and flair out at the bottom to accommodate all body types. Rivets at all stress points</p>
+                                <p v-html="product.summary"></p>
                                 <div class="product-stock">
-                                    <p>Availability: <span>116 in stock</span></p>
+                                    <p>Availability: 
+                                        <span v-if="product.stock>0">{{product.stock}} in stock</span>
+                                        <span v-else>out of stock</span>
+                                    </p>
                                 </div>
                                 <div class="product-details-quality-cart product-details-content-border">
                                     <div class="product-quality">
@@ -135,13 +78,13 @@
                                 </div>
                                 <div class="product-details-meta">
                                     <ul>
-                                        <li><span class="title">SKU:</span> #ABC123456</li>
-                                        <li><span class="title">Category:</span> <a href="#">Hats</a></li>
+                                        <li><span class="title">SKU:</span> {{product.skuId}}</li>
+                                        <li><span class="title">Category:</span> <a href="#">{{product.category}}</a></li>
                                         <li><span class="title">Tags:</span>
                                             <ul class="tag">
-                                                <li><a href="#">blue</a>,</li>
-                                                <li><a href="#">hat</a>,</li>
-                                                <li><a href="#">men</a></li>
+                                                <li v-for="(item, index) in product.tags" v-bind:key="index">
+                                                    <a :href="`/shop?tag=${item}`">{{item}}</a>{{(index < product.tags.length-1)?"," : ""}}
+                                                </li>
                                             </ul>
                                         </li>
                                         <li><span class="title">Share:</span>
@@ -162,73 +105,33 @@
                         <div class="description-review-topbar nav">
                             <a class="active" data-bs-toggle="tab" href="#des-details1"> Description </a>
                             <a data-bs-toggle="tab" href="#des-details2"> Additional information </a>
-                            <a data-bs-toggle="tab" href="#des-details3"> Reviews (2) </a>
+                            <a data-bs-toggle="tab" href="#des-details3"> Reviews ({{product.reviews.length}}) </a>
                         </div>
                         <div class="tab-content">
                             <div id="des-details1" class="tab-pane active">
-                                <div class="product-description-content">
-                                    <h4>Description</h4>
-                                    <p>Top Quality Patagonia Wavefarer Bucket Hat for less money. 100% Cotton.</p>
-                                    <ul>
-                                        <li>Imported</li>
-                                        <li> Fabric has 50 UPF to inhibit harmful UV rays and HELP protect your skin</li>
-                                        <li> Climacool mesh panels for breathability</li>
-                                        <li> Moisture-wicking sweatband inside helps keep you dry</li>
-                                        <li> Non-glare undervisor</li>
-                                    </ul>
-                                </div>
+                                <div class="product-description-content" v-html="product.description"></div>
                             </div>
                             <div id="des-details2" class="tab-pane">
-                                <div class="additional-information-content">
-                                    <h5>Additional information</h5>
-                                    <ul>
-                                        <li><span>Color:</span>Blue, Carmine, Copper, Green</li>
-                                        <li class="gray"><span>Size:</span>L, M, S, XL, XXL</li>
-                                    </ul>
-                                </div>
+                                <div class="additional-information-content" v-html="product.additionalInfomation?product.additionalInfomation.join('\n'):''"></div>
                             </div>
                             <div id="des-details3" class="tab-pane">
                                 <div class="ratting-form-wrapper">
-                                    <h4>2 reviews for Patagonia Wavefarer Bucket Hat</h4>
+                                    <h4>{{product.reviews.length}} reviews for {{product.title}}</h4>
                                     <div class="review-wrapper">
-                                        <div class="single-review">
+                                        <div v-for="(item, index) in product.reviews" v-bind:key="index" class="single-review">
                                             <div class="review-img">
-                                                <img src="../../assets/themes/bag/images/product-details/client-1.jpg" alt="">
+                                                <img :src="item.img" alt="">
                                             </div>
                                             <div class="review-content-wrap">
                                                 <div class="client-name-rating">
                                                     <div class="client-name">
-                                                        <p>Cobus Bester <span>- June 7, 2013</span></p>
+                                                        <p>{{item.name}} <span>- {{item.date}}</span></p>
                                                     </div>
                                                     <div class="client-rating">
-                                                        <i class="ion-android-star"></i>
-                                                        <i class="ion-android-star"></i>
-                                                        <i class="ion-android-star"></i>
-                                                        <i class="ion-android-star"></i>
-                                                        <i class="ion-android-star gray"></i>
+                                                        <review-stars :stars="item.stars"></review-stars>
                                                     </div>
                                                 </div>
-                                                <p>Wonderful quality, and an awesome design. WooThemes ftw!</p>
-                                            </div>
-                                        </div>
-                                        <div class="single-review">
-                                            <div class="review-img">
-                                                <img src="../../assets/themes/bag/images/product-details/client-1.jpg" alt="">
-                                            </div>
-                                            <div class="review-content-wrap">
-                                                <div class="client-name-rating">
-                                                    <div class="client-name">
-                                                        <p>Andrew <span>- June 7, 2013</span></p>
-                                                    </div>
-                                                    <div class="client-rating">
-                                                        <i class="ion-android-star"></i>
-                                                        <i class="ion-android-star"></i>
-                                                        <i class="ion-android-star"></i>
-                                                        <i class="ion-android-star"></i>
-                                                        <i class="ion-android-star gray"></i>
-                                                    </div>
-                                                </div>
-                                                <p>This t-shirt is awesome! Would recommend to everyone! <br>I’m ordering mine next week</p>
+                                                <p v-html="item.content"></p>
                                             </div>
                                         </div>
                                     </div>
@@ -236,11 +139,7 @@
                                         <h4> Add a review </h4>
                                         <h5>Your rating</h5>
                                         <div class="client-rating">
-                                            <i class="ion-android-star"></i>
-                                            <i class="ion-android-star"></i>
-                                            <i class="ion-android-star"></i>
-                                            <i class="ion-android-star"></i>
-                                            <i class="ion-android-star gray"></i>
+                                            <review-stars :stars="myStars" :editMode="true" @update-stars="setStars"></review-stars>
                                         </div>
                                         <form action="#">
                                             <div class="row">
@@ -317,56 +216,7 @@
                             </div>
                         </div>
                         <div class="sidebar-widget">
-                            <div class="sidebar-widget-title mb-25">
-                                <h3>Recent Products </h3>
-                            </div>
-                            <div class="sidebar-product-wrap">
-                                <div class="single-sidebar-product">
-                                    <div class="sidebar-product-img">
-                                        <a href="product-details.html"><img src="../../assets/themes/bag/images/product/shop-sidebar-1.jpg" alt=""></a>
-                                    </div>
-                                    <div class="sidebar-product-content">
-                                        <h4><a href="product-details.html">Longline T-Shirt In Lined Fabric</a></h4>
-                                        <span> $31.00 – $34.00</span>
-                                    </div>
-                                </div>
-                                <div class="single-sidebar-product">
-                                    <div class="sidebar-product-img">
-                                        <a href="product-details.html"><img src="../../assets/themes/bag/images/product/shop-sidebar-2.jpg" alt=""></a>
-                                    </div>
-                                    <div class="sidebar-product-content">
-                                        <h4><a href="product-details.html"> T-shirt International</a></h4>
-                                        <span> $35.00 – $37.00</span>
-                                    </div>
-                                </div>
-                                <div class="single-sidebar-product">
-                                    <div class="sidebar-product-img">
-                                        <a href="product-details.html"><img src="../../assets/themes/bag/images/product/shop-sidebar-3.jpg" alt=""></a>
-                                    </div>
-                                    <div class="sidebar-product-content">
-                                        <h4><a href="product-details.html">Satchel In Grey Dawson Backpack</a></h4>
-                                        <span> $40.00 – $42.00</span>
-                                    </div>
-                                </div>
-                                <div class="single-sidebar-product">
-                                    <div class="sidebar-product-img">
-                                        <a href="product-details.html"><img src="../../assets/themes/bag/images/product/shop-sidebar-4.jpg" alt=""></a>
-                                    </div>
-                                    <div class="sidebar-product-content">
-                                        <h4><a href="product-details.html">Nike Heritage Herschel backpack</a></h4>
-                                        <span> $43.00 – $45.00</span>
-                                    </div>
-                                </div>
-                                <div class="single-sidebar-product">
-                                    <div class="sidebar-product-img">
-                                        <a href="product-details.html"><img src="../../assets/themes/bag/images/product/shop-sidebar-5.jpg" alt=""></a>
-                                    </div>
-                                    <div class="sidebar-product-content">
-                                        <h4><a href="product-details.html">Set Supreme Cap</a></h4>
-                                        <span> $52.00 – $55.00</span>
-                                    </div>
-                                </div>
-                            </div>
+                        <recent-products />
                         </div>
                     </div>
                 </div>
@@ -380,19 +230,19 @@
             </div>
             <div class="relative-product-active swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
+                    <div class="swiper-slide" v-for="(item, index) in relativeProducts" :key="index">
                         <div class="product-wrap">
                             <div class="product-img mb-20">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="../../assets/themes/bag/images/product/product-2.jpg" alt="">
-                                    <img class="hover-img" src="../../assets/themes/bag/images/product/product-2-1.jpg" alt="">
+                                <a :href="`/product/${item.pid}`">
+                                    <img class="default-img" :src="item.imgsPreview.default.large" alt="">
+                                    <img class="hover-img" :src="item.imgsPreview.hover.large" alt="">
                                 </a>
                                 <div class="product-action-wrap">
                                     <div class="product-action-left">
                                         <button aria-label="Add To Cart"><i class="ion-ios-plus-empty"></i> Add to cart </button>
                                     </div>
                                     <div class="product-action-right tooltip-style">
-                                        <button aria-label="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="ion-ios-eye-outline"></i></button>
+                                        <button aria-label="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal" v-on:click="setPreviewId(index)"><i class="ion-ios-eye-outline"></i></button>
                                         <button aria-label="Add To Wishlist"><i class="ion-ios-heart-outline"></i></button>
                                         <button aria-label="Compare"><i class="ion-stats-bars"></i></button>
                                     </div>
@@ -400,181 +250,12 @@
                             </div>
                             <div class="product-content text-center">
                                 <div class="product-rating">
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star gray"></i>
+                                    <review-stars :stars="item.stars"></review-stars>
                                 </div>
-                                <h3><a href="product-details.html">Satchel In Washed Navy Canvas</a></h3>
+                                <h3><a :href="`/product/${item.pid}`">{{item.title}}</a></h3>
                                 <div class="product-price">
-                                    <span class="old-price">$24.00</span>
-                                    <span class="new-price">$12.00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="product-wrap">
-                            <div class="product-img mb-20">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="../../assets/themes/bag/images/product/product-3.jpg" alt="">
-                                    <img class="hover-img" src="../../assets/themes/bag/images/product/product-3-1.jpg" alt="">
-                                </a>
-                                <div class="product-action-wrap">
-                                    <div class="product-action-left">
-                                        <button aria-label="Add To Cart"><i class="ion-ios-plus-empty"></i> Add to cart </button>
-                                    </div>
-                                    <div class="product-action-right tooltip-style">
-                                        <button aria-label="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="ion-ios-eye-outline"></i></button>
-                                        <button aria-label="Add To Wishlist"><i class="ion-ios-heart-outline"></i></button>
-                                        <button aria-label="Compare"><i class="ion-stats-bars"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-content text-center">
-                                <div class="product-rating">
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star gray"></i>
-                                </div>
-                                <h3><a href="product-details.html">The North Face T-Shirt</a></h3>
-                                <div class="product-price">
-                                    <span>$30.00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="product-wrap">
-                            <div class="product-img mb-20">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="../../assets/themes/bag/images/product/product-4.jpg" alt="">
-                                    <img class="hover-img" src="../../assets/themes/bag/images/product/product-4-1.jpg" alt="">
-                                </a>
-                                <div class="product-action-wrap">
-                                    <div class="product-action-left">
-                                        <button aria-label="Add To Cart"><i class="ion-ios-plus-empty"></i> Add to cart </button>
-                                    </div>
-                                    <div class="product-action-right tooltip-style">
-                                        <button aria-label="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="ion-ios-eye-outline"></i></button>
-                                        <button aria-label="Add To Wishlist"><i class="ion-ios-heart-outline"></i></button>
-                                        <button aria-label="Compare"><i class="ion-stats-bars"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-content text-center">
-                                <div class="product-rating">
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star gray"></i>
-                                </div>
-                                <h3><a href="product-details.html">Longline T-Shirt In Lined Fabric</a></h3>
-                                <div class="product-price">
-                                    <span>$31.00 - $34.00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="product-wrap">
-                            <div class="product-img mb-20">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="../../assets/themes/bag/images/product/product-6.jpg" alt="">
-                                    <img class="hover-img" src="../../assets/themes/bag/images/product/product-6-1.jpg" alt="">
-                                </a>
-                                <div class="product-action-wrap">
-                                    <div class="product-action-left">
-                                        <button aria-label="Add To Cart"><i class="ion-ios-plus-empty"></i> Add to cart </button>
-                                    </div>
-                                    <div class="product-action-right tooltip-style">
-                                        <button aria-label="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="ion-ios-eye-outline"></i></button>
-                                        <button aria-label="Add To Wishlist"><i class="ion-ios-heart-outline"></i></button>
-                                        <button aria-label="Compare"><i class="ion-stats-bars"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-content text-center">
-                                <div class="product-rating">
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star gray"></i>
-                                </div>
-                                <h3><a href="product-details.html">Patagonia Wavefarer Bucket Hat</a></h3>
-                                <div class="product-price">
-                                    <span>$39.00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="product-wrap">
-                            <div class="product-img mb-20">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="../../assets/themes/bag/images/product/product-5.jpg" alt="">
-                                    <img class="hover-img" src="../../assets/themes/bag/images/product/product-5-1.jpg" alt="">
-                                </a>
-                                <div class="product-action-wrap">
-                                    <div class="product-action-left">
-                                        <button aria-label="Add To Cart"><i class="ion-ios-plus-empty"></i> Add to cart </button>
-                                    </div>
-                                    <div class="product-action-right tooltip-style">
-                                        <button aria-label="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="ion-ios-eye-outline"></i></button>
-                                        <button aria-label="Add To Wishlist"><i class="ion-ios-heart-outline"></i></button>
-                                        <button aria-label="Compare"><i class="ion-stats-bars"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-content text-center">
-                                <div class="product-rating">
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star gray"></i>
-                                </div>
-                                <h3><a href="product-details.html">Leather The Quartz Watch</a></h3>
-                                <div class="product-price">
-                                    <span>$34.00 - $64.00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="product-wrap">
-                            <div class="product-img mb-20">
-                                <a href="product-details.html">
-                                    <img class="default-img" src="../../assets/themes/bag/images/product/product-6.jpg" alt="">
-                                    <img class="hover-img" src="../../assets/themes/bag/images/product/product-6-1.jpg" alt="">
-                                </a>
-                                <div class="product-action-wrap">
-                                    <div class="product-action-left">
-                                        <button aria-label="Add To Cart"><i class="ion-ios-plus-empty"></i> Add to cart </button>
-                                    </div>
-                                    <div class="product-action-right tooltip-style">
-                                        <button aria-label="Quick View" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="ion-ios-eye-outline"></i></button>
-                                        <button aria-label="Add To Wishlist"><i class="ion-ios-heart-outline"></i></button>
-                                        <button aria-label="Compare"><i class="ion-stats-bars"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-content text-center">
-                                <div class="product-rating">
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star"></i>
-                                    <i class="ion-android-star gray"></i>
-                                </div>
-                                <h3><a href="/product-details">Patagonia Wavefarer Bucket Hat</a></h3>
-                                <div class="product-price">
-                                    <span>$39.00</span>
+                                    <span class="old-price">{{item.price}}</span>
+                                    <span class="new-price">{{item.priceSell}}</span>
                                 </div>
                             </div>
                         </div>
@@ -583,73 +264,150 @@
             </div>
         </div>
     </div>
+    <preview-product :product="previewProduct" />
 </template>
 
 <script>
+console.log("productDetails.498");
+import {getProductDetail,getRelatedProducts} from "../../api/product";
 import Swiper, {
   Autoplay,
   EffectCoverflow,
   EffectCube,
   Pagination,
   Navigation,
+  Thumbs,
 } from "swiper";
-Swiper.use([Autoplay, EffectCoverflow, EffectCube, Pagination, Navigation]);
+Swiper.use([Autoplay, EffectCoverflow, EffectCube, Pagination, Navigation,Thumbs]);
+import DataStructures from '../../components/DataStructures';
+import ReviewStars from '../../components/ReviewStars.vue';
+import RecentProducts from '../../components/RecentProducts.vue';
+import PreviewProduct from '../../components/PreviewProduct.vue';
+import '../../assets/themes/bag/js/plugins/images-loaded.js'
 
 export default {
     name: "productDetails",
+    data() {
+        return {
+            pid: this.$route.params.pid,
+            product: DataStructures.data.product,
+            relativeProducts: [DataStructures.data.product],
+            myStars: 0,
+            previewProduct: DataStructures.data.product
+        }
+    },
+    components: {
+        ReviewStars,
+        RecentProducts,
+        PreviewProduct
+    },
+    beforeCreate() {
+    },
     mounted() {
-        new Swiper(".product-details-big-img-slider", {
-            loop: false,
-            spaceBetween: 15,
-            slidesPerView: 4,
-            breakpoints: {
-                0: {
-                    slidesPerView: 3,
-                },
-                576: {
+        console.log("mounted");
+        
+        getProductDetail(this.pid)
+        .then(response => {
+            this.product = response.data;
+        })
+        .catch(function (error) {
+            console.log(error);
+        }); 
+
+        getRelatedProducts(this.pid)
+        .then(response => {
+            this.relativeProducts = response.data;
+        })
+        .catch(function (error) {
+            console.log(error);
+        }); 
+    },
+    methods: {
+        onProductChanged() {
+            console.log("onProductChanged");
+            $(".swiper-wrapper").imagesLoaded(function() {
+            // this.$nextTick(() => {
+                var productDetailsSmall = new Swiper('.product-details-small-img-slider', {
+                    loop: false,
+                    spaceBetween: 15,
                     slidesPerView: 4,
-                },
-            }
-        });
+                    breakpoints: {
+                        0: {
+                            slidesPerView: 3,
+                        },
+                        576: {
+                            slidesPerView: 4,
+                        },
+                    }
+                });
 
-        new Swiper(".product-details-big-img-slider-2", {
-            autoplay: false,
-            delay: 5000,
-            slidesPerView: 1,
-            loop: false,
-            navigation: {
-                nextEl: '.product-details-next',
-                prevEl: '.product-details-prev',
-            },
-            thumbs: {
-                swiper: productDetailsSmall
-            }
-        });
+                var productDetailsBigTwo = new Swiper('.product-details-big-img-slider-2', {
+                    autoplay: false,
+                    delay: 5000,
+                    slidesPerView: 1,
+                    loop: false,
+                    navigation: {
+                        nextEl: '.product-details-next',
+                        prevEl: '.product-details-prev',
+                    },
+                    thumbs: {
+                        swiper: productDetailsSmall
+                    }
+                });
 
-        new Swiper(".relative-product-active", {
-            slidesPerView: 3,
-            spaceBetween: 30,
-            loop: true,
-            breakpoints: {
-                320: {
-                    slidesPerView: 1
-                },
-                479: {
-                    slidesPerView: 2,
-                    spaceBetween: 15,
-                },
-                576: {
-                    slidesPerView: 2,
-                    spaceBetween: 15,
-                },
-                768: {
-                    slidesPerView: 2
-                },
-                992: {
-                    slidesPerView: 3
-                },
-            },
-        });
-    }
+                var $easyzoom = $('.easyzoom').easyZoom();
+            });
+        },
+        onRelativeProductChanged() {
+            console.log("onRelativeProductChanged");
+            
+            this.$nextTick(() => {
+                
+                // Related products
+                var relativeProductActive = new Swiper(".relative-product-active", {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                    loop: true,
+                    breakpoints: {
+                        320: {
+                            slidesPerView: 1
+                        },
+                        479: {
+                            slidesPerView: 2,
+                            spaceBetween: 15,
+                        },
+                        576: {
+                            slidesPerView: 2,
+                            spaceBetween: 15,
+                        },
+                        768: {
+                            slidesPerView: 2
+                        },
+                        992: {
+                            slidesPerView: 3
+                        },
+                    },
+                });
+                // relativeProductActive.on('slideChange', function () {
+                //     console.log('slide changed');
+                // });
+
+            });
+        },
+        hashTags: function(value, newValue) {
+            // Replace hash tags with links
+            return value.replace(/#(\S*)/g, newValue)
+        },
+        setStars(s) {
+            this.myStars = s;
+        },
+        setPreviewId(index) {
+            this.previewProduct = this.relativeProducts[index];
+        }
+    },
+    watch: {
+        product: 'onProductChanged', // 1
+        relativeProducts: "onRelativeProductChanged"
+    },
 }
 </script>

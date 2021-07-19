@@ -22,25 +22,45 @@ const router = createRouter({
                   name: 'shop',
                   component: () => import('../views/home/shop.vue')
                 }, {
-                  path: '/about',
-                  name: 'about',
-                  component: () => import('../views/home/about.vue')
+                  path: '/products',
+                  name: 'productGrid',
+                  component: () => import('../views/home/productGrid.vue')
                 }, {
-                  path: '/product-details',
+                  path: '/product/:pid',
                   name: 'productDetails',
                   component: () => import('../views/home/productDetails.vue')
-                }, {
+                },{
                   path: '/login-register',
                   name: 'loginRegister',
                   component: () => import('../views/home/login-register.vue')
                 }, {
+                  path: '/cart',
+                  name: 'cart',
+                  component: () => import('../views/home/cart.vue')
+                }, {
+                  path: '/wishlist',
+                  name: 'wishlist',
+                  component: () => import('../views/home/wishlist.vue')
+                }, {
+                  path: '/checkout',
+                  name: 'checkout',
+                  component: () => import('../views/home/checkout.vue')
+                }, {
+                  path: '/order-tracking',
+                  name: 'OrderTracking',
+                  component: () => import('../views/home/OrderTracking.vue')
+                }, {
+                  path: '/compare',
+                  name: 'compare',
+                  component: () => import('../views/home/Compare.vue')
+                }, {
+                  path: '/about',
+                  name: 'about',
+                  component: () => import('../views/home/about.vue')
+                }, {
                   path: '/404',
                   name: 'notfound',
                   component: () => import('../views/home/notfound.vue')
-                // }, {
-                //   path: '/product/:id',
-                //   name: 'product',
-                //   component: () => import('./pages/product.vue')
                 // }, {
                 //   path: '/detail/:id',
                 //   name: 'detail',
