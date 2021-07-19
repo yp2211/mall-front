@@ -30,6 +30,10 @@ const router = createRouter({
                   name: 'productDetails',
                   component: () => import('../views/home/productDetails.vue')
                 }, {
+                  path: '/login-register',
+                  name: 'loginRegister',
+                  component: () => import('../views/home/login-register.vue')
+                }, {
                   path: '/404',
                   name: 'notfound',
                   component: () => import('../views/home/notfound.vue')
