@@ -18,11 +18,16 @@
         <div class="row align-items-center">
           <div class="col-xl-2 col-lg-2">
             <div class="logo">
-              <a href="/index"
+              <router-link to="/index">
+                <!-- <img src="../assets/themes/bag/images/logo/logo-black.png" /> -->
+                <h4><strong>Mr.<br />Roc</strong></h4>
+              </router-link>
+
+              <!-- <a href="/index"
                 ><img
                   src="../assets/themes/bag/images/logo/logo-black.png"
                   alt="logo"
-              /></a>
+              /></a> -->
             </div>
           </div>
           <div class="col-xl-7 col-lg-7">
@@ -427,13 +432,31 @@
                   data-bs-toggle="modal"
                   data-bs-target="#loginActive"
                   href="#"
-                  >Log in</a
-                >
+                  v-if="isProfileLoaded"
+                  >{{ name }}</a
+                >            
                 <a
                   class="black"
                   data-bs-toggle="modal"
                   data-bs-target="#registerActive"
                   href="#"
+                  v-if="isAuthenticated"
+                  >Log out</a
+                >
+                <a
+                  class="black"
+                  data-bs-toggle="modal"
+                  data-bs-target="#loginActive"
+                  href="#"
+                  v-if="!isAuthenticated && !authLoading"
+                  >Log in</a
+                >            
+                <a
+                  class="black"
+                  data-bs-toggle="modal"
+                  data-bs-target="#registerActive"
+                  href="#"
+                  v-if="!isAuthenticated && !authLoading"
                   >Sign Up</a
                 >
               </div>
@@ -635,9 +658,9 @@
             <div class="login-content">
               <h2>Log in</h2>
               <h3>Log in your account</h3>
-              <form action="#">
-                <input type="text" placeholder="Username" />
-                <input type="password" placeholder="Password" />
+              <form @submit.prevent="login">
+                <input required v-model="username" type="text" placeholder="Username" />
+                <input required v-model="password" type="password" placeholder="Password" />
                 <div class="remember-forget-wrap">
                   <div class="remember-wrap">
                     <input type="checkbox" />
@@ -648,11 +671,11 @@
                     <a href="#">Forgot your password?</a>
                   </div>
                 </div>
-                <button type="button">Log in</button>
+                <button type="submit">Log in</button>
                 <div class="member-register">
                   <p>
                     Not a member?
-                    <a href="login-register.html"> Register now</a>
+                    <a href="/login-register"> Register now</a>
                   </p>
                 </div>
               </form>
@@ -685,7 +708,7 @@
                 </div>
                 <button type="button">Register</button>
                 <div class="member-register">
-                  <p>A member? <a href="login-register.html"> Log in now</a></p>
+                  <p>A member? <a href="/login-register"> Log in now</a></p>
                 </div>
               </form>
             </div>
@@ -981,11 +1004,12 @@
 </template>
 
 <script>
-console.log("HeaderArea2.vue Ln.986")
+import { mapGetters, mapState } from "vuex";
 import "../assets/themes/bag/js/vendor/bootstrap.min.js";
 import "../assets/themes/bag/js/plugins/slinky.min.js";
 import { slinkyForVue } from "./slinky";
 import "../assets/themes/bag/js/plugins/easyzoom.js";
+import { AUTH_REQUEST } from "../store/actions/auth";
 
 export default {
   name: "header-area2",
@@ -997,6 +1021,8 @@ export default {
       isClickableMainmenuActive: false,
       isCartActived: false,
       // showModal: false
+      username: 'dogo',
+      password: 'dogy'
     };
   },
   setup() {},
@@ -1034,16 +1060,43 @@ export default {
     cartClose() {
       this.isCartActived = false;
       $('.main-wrapper').removeClass('overlay-active');
-    }
+    },
+    login: function() {
+      const { username, password } = this;
+      this.$store.dispatch(AUTH_REQUEST, { username, password }).then(() => {
+        this.$router.push("/");
+        //!isAuthenticated && !authLoading
+        console.log(this.isAuthenticated);
+        console.log(this.$store.getters.isAuthenticated);
+        console.log(this.authLoading);
+        console.log(this.$store.getters.authStatus);
+      });
+    }    
   },
   created() {
     document.addEventListener("scroll", this.onScroll);
     window.addEventListener("touchmove", this.onScroll);
   },
   mounted() {
+    // Using slinky to format menu layout
     slinkyForVue();
     
   },
+  computed: {
+    ...mapGetters(["getProfile", "isAuthenticated", "isProfileLoaded"]),
+    ...mapState({
+      authLoading: state => state.auth.status === "loading",
+      name: state => `${state.user.profile.title} ${state.user.profile.name}`
+    })
+  },
+  watch: {
+    isAuthenticated: () => {
+      console.log(this.isAuthenticated);
+    },
+    authLoading: ()=> {
+      console.log(this.authLoading);
+    }
+  }
 };
 </script>
 

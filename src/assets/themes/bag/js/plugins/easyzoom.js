@@ -1,6 +1,4 @@
 (function (root, factory) {
-    console.log("easyZoom");
-    
     'use strict';
     if(typeof define === 'function' && define.amd) {
         define(['jquery'], function($){

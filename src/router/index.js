@@ -1,8 +1,24 @@
 import { createRouter, createWebHistory } from 'vue-router'
-
 import HomeView from '../views/home/HomeView.vue'
+import store from "../store";
 
 const routerHistory = createWebHistory();
+
+const ifNotAuthenticated = (to, from, next) => {
+  if (!store.getters.isAuthenticated) {
+    next();
+    return;
+  }
+  next("/");
+};
+
+const ifAuthenticated = (to, from, next) => {
+  if (store.getters.isAuthenticated) {
+    next();
+    return;
+  }
+  next("/login");
+};
 
 const router = createRouter({
     history: routerHistory,

@@ -1,12 +1,16 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import { createStore } from 'vuex'
+import user from "./modules/user";
+import auth from "./modules/auth";
 
-Vue.use(Vuex)
+const debug = process.env.NODE_ENV !== "production";
 
-const store = new Vuex.Store({
-    state:{
-        name:'helloVueX'
-    }
+// Create a new store instance.
+const store = createStore({
+  modules: {
+    user,
+    auth
+  },
+  strict: debug
 })
 
 export default store;

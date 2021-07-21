@@ -1,4 +1,4 @@
-import { createApp, h } from 'vue'
+import { createApp } from 'vue'
 import App from './App.vue'
 import router from "./router";
 import i18n from './i18n';
@@ -7,7 +7,7 @@ import VueAxios from 'vue-axios';
 // import { jQuery } from 'jquery';
 // // import VueLazyLoad from 'vue-lazyload';
 // // import VueCookie from 'vue-cookie';
-// // import store from './store'
+import store from './store'
 // // import path from 'path'
 
 // window.$=window.jQuery=window.$jQuery=jQuery;
@@ -22,7 +22,7 @@ app.use(i18n);
 //     $jQuery: jQuery
 // })
 console.log("main.js Ln.23")
-// app.use(store);
+app.use(store);
 // app.use({
 //     install: function(Vue, options){
 //         Vue.prototype.$jQuery = require('jquery'); // you'll have this.$jQuery anywhere in your vue project
