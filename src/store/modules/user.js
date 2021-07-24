@@ -2,7 +2,10 @@ import { USER_REQUEST, USER_ERROR, USER_SUCCESS } from "../actions/user";
 import apiCall from "../../utils/api";
 import { AUTH_LOGOUT } from "../actions/auth";
 
-const state = { status: "", profile: {} };
+const state = { 
+  status: "", 
+  profile: JSON.parse(localStorage.getItem("user-profile")) || {},
+};
 
 const getters = {
   getProfile: state => state.profile,
@@ -16,7 +19,7 @@ const actions = {
       .then(resp => {
         commit(USER_SUCCESS, resp);
       })
-      .catch(() => {
+      .catch((e) => {
         commit(USER_ERROR);
         // if resp is unauthorized, logout, to
         dispatch(AUTH_LOGOUT);
@@ -30,7 +33,9 @@ const mutations = {
   },
   [USER_SUCCESS]: (state, resp) => {
     state.status = "success";
-    Vue.set(state, "profile", resp);
+    state.profile = resp;
+    localStorage.setItem("user-profile", JSON.stringify(resp));
+    // Vue.set(state, "profile", resp);
   },
   [USER_ERROR]: state => {
     state.status = "error";
@@ -41,6 +46,7 @@ const mutations = {
 };
 
 export default {
+  // namespaced: true,
   state,
   getters,
   actions,

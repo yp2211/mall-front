@@ -50,7 +50,7 @@ import {
   };
   
   const mutations = {
-    [AUTH_REQUEST]: state => {
+    [AUTH_REQUEST]: (state) => {
       state.status = "loading";
     },
     [AUTH_SUCCESS]: (state, resp) => {
@@ -68,6 +68,7 @@ import {
   };
   
   export default {
+    // namespaced: true,
     state,
     getters,
     actions,

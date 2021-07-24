@@ -8,7 +8,7 @@
                         <div class="col-12">
                             <div class="hero-content-8 slider-animated-2">
                                 <h4 class="animated">THE BEST <br>DESIGN FROM <br>GIORDANO </h4>
-                                <h1 class="animated">Giordano Duffles Collection </h1>
+                                <h1 class="animated" v-on:click="showIsAuthenticated">Giordano Duffles Collection </h1>
                                 <p class="animated">Lorem ipsum dolor sit amet, consectetur adipis elit. Nunc imperdiet, nulla a scelerisque condimentum, enim mi blandit erat, at blandit. </p>
                                 <div class="btn-style-7">
                                     <a class="animated" href="shop.html">VIEW COLLECTION <i class="ion-play"></i></a>
@@ -310,6 +310,7 @@
 
 <script>
 // import {getHomeContent} from "../../api/home"
+import { mapGetters, mapState } from "vuex";
 import Swiper, {
   Autoplay,
   EffectCoverflow,
@@ -369,7 +370,25 @@ export default {
             }
         },
       });
-    } 
+    },
+    methods: {
+        showIsAuthenticated() {
+            console.log(
+                this.$store
+            );
+            console.log(this.$store.state)
+            console.log(this.isAuthed)
+        }
+    },
+    computed: {
+    ...mapGetters(
+      [{isAuthed: "isAuthenticated"}, { isProfLoaded: "isProfileLoaded"}]
+    ),
+    // ...mapState({
+    //   authLoading: state => state.auth.status === "loading",
+    //   titleName: state => `${state.user.profile.title} ${state.user.profile.name}`
+    // })
+  },
 }
 </script>
 

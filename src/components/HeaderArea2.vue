@@ -13,6 +13,7 @@
       border-bottom-4
     "
   >
+
     <div class="header-large-device d-none d-lg-block">
       <div class="container-fluid">
         <div class="row align-items-center">
@@ -30,7 +31,7 @@
               /></a> -->
             </div>
           </div>
-          <div class="col-xl-7 col-lg-7">
+          <div class="col-xl-6 col-lg-6">
             <div class="main-menu main-menu-black menu-line-height-4">
               <nav>
                 <ul>
@@ -424,23 +425,20 @@
               </nav>
             </div>
           </div>
-          <div class="col-xl-3 col-lg-3">
+          <div class="col-xl-4 col-lg-4">
             <div class="header-action-wrap">
               <div class="header-action-login-signup">
                 <a
                   class="black"
-                  data-bs-toggle="modal"
-                  data-bs-target="#loginActive"
-                  href="#"
+                  href="/account"
                   v-if="isProfileLoaded"
-                  >{{ name }}</a
+                  >{{ titleName }}</a
                 >            
                 <a
                   class="black"
-                  data-bs-toggle="modal"
-                  data-bs-target="#registerActive"
                   href="#"
                   v-if="isAuthenticated"
+                  v-on:click="logout"
                   >Log out</a
                 >
                 <a
@@ -450,7 +448,7 @@
                   href="#"
                   v-if="!isAuthenticated && !authLoading"
                   >Log in</a
-                >            
+                >
                 <a
                   class="black"
                   data-bs-toggle="modal"
@@ -658,7 +656,8 @@
             <div class="login-content">
               <h2>Log in</h2>
               <h3>Log in your account</h3>
-              <form @submit.prevent="login">
+              <!-- <form @submit.prevent="login"> -->
+              <form>
                 <input required v-model="username" type="text" placeholder="Username" />
                 <input required v-model="password" type="password" placeholder="Password" />
                 <div class="remember-forget-wrap">
@@ -671,7 +670,8 @@
                     <a href="#">Forgot your password?</a>
                   </div>
                 </div>
-                <button type="submit">Log in</button>
+                <!-- <button type="submit" data-bs-dismiss="modal">Log in</button> -->
+                <button data-bs-dismiss="modal" v-on:click="login">Log in</button>
                 <div class="member-register">
                   <p>
                     Not a member?
@@ -1009,7 +1009,7 @@ import "../assets/themes/bag/js/vendor/bootstrap.min.js";
 import "../assets/themes/bag/js/plugins/slinky.min.js";
 import { slinkyForVue } from "./slinky";
 import "../assets/themes/bag/js/plugins/easyzoom.js";
-import { AUTH_REQUEST } from "../store/actions/auth";
+import { AUTH_REQUEST, AUTH_LOGOUT } from "../store/actions/auth";
 
 export default {
   name: "header-area2",
@@ -1025,7 +1025,12 @@ export default {
       password: 'dogy'
     };
   },
-  setup() {},
+  setup() {
+    const logined = false;
+    return {
+      logined
+    }
+  },
   methods: {
     onScroll() {
       var scroll = window.scrollY;
@@ -1065,13 +1070,13 @@ export default {
       const { username, password } = this;
       this.$store.dispatch(AUTH_REQUEST, { username, password }).then(() => {
         this.$router.push("/");
-        //!isAuthenticated && !authLoading
-        console.log(this.isAuthenticated);
-        console.log(this.$store.getters.isAuthenticated);
-        console.log(this.authLoading);
-        console.log(this.$store.getters.authStatus);
       });
-    }    
+    },
+    logout: function() {
+      this.$store.dispatch(AUTH_LOGOUT).then(() => {
+        this.$router.push("/");
+      })
+    }
   },
   created() {
     document.addEventListener("scroll", this.onScroll);
@@ -1080,23 +1085,26 @@ export default {
   mounted() {
     // Using slinky to format menu layout
     slinkyForVue();
-    
   },
   computed: {
+    // isAuthenticated() {
+    //   return !!this.$store.state.auth.token;
+    // },
+    // getProfile() {
+    //   return this.$store.state.user.profile;
+    // },
+    // isProfileLoaded() { 
+    //   return !!this.$store.state.user.profile.name;
+    // },
+    // titleName() {
+    //   return this.$store.state.user.profile.title + this.$store.state.user.profile.name;
+    // },
     ...mapGetters(["getProfile", "isAuthenticated", "isProfileLoaded"]),
     ...mapState({
       authLoading: state => state.auth.status === "loading",
-      name: state => `${state.user.profile.title} ${state.user.profile.name}`
+      titleName: state => `${state.user.profile.title} ${state.user.profile.name}`
     })
   },
-  watch: {
-    isAuthenticated: () => {
-      console.log(this.isAuthenticated);
-    },
-    authLoading: ()=> {
-      console.log(this.authLoading);
-    }
-  }
 };
 </script>
 
