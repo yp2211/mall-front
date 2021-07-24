@@ -523,9 +523,23 @@
               <div class="header-action-login-signup">
                 <a
                   class="black"
+                  href="/account"
+                  v-if="isProfileLoaded"
+                  >{{ titleName }}</a
+                >            
+                <a
+                  class="black"
+                  href="#"
+                  v-if="isAuthenticated"
+                  v-on:click="logout"
+                  >Log out</a
+                >
+                <a
+                  class="black"
                   data-bs-toggle="modal"
                   data-bs-target="#loginActive"
                   href="#"
+                  v-if="!isAuthenticated && !authLoading"
                   >Log in</a
                 >
                 <a
@@ -533,6 +547,7 @@
                   data-bs-toggle="modal"
                   data-bs-target="#registerActive"
                   href="#"
+                  v-if="!isAuthenticated && !authLoading"
                   >Sign Up</a
                 >
               </div>
