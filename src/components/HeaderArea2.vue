@@ -21,7 +21,7 @@
             <div class="logo">
               <router-link to="/index">
                 <!-- <img src="../assets/themes/bag/images/logo/logo-black.png" /> -->
-                <h4><strong>Mr.<br />Roc</strong></h4>
+                <h4><strong>Mr.<br />Kyoka</strong></h4>
               </router-link>
 
               <!-- <a href="/index"
@@ -608,99 +608,13 @@
       </div>
     </div>
   </header>
-    <!-- mini cart start -->
-    <div class="sidebar-cart-active" :class="{inside:isCartActived}">
-        <div class="sidebar-cart-all">
-            <a class="cart-close" href="#" v-on:click="cartClose"><i class="icon_close"></i> Close </a>
-            <div class="cart-content">
-                <h3>Cart</h3>
-                <ul>
-                    <li class="single-product-cart">
-                        <div class="cart-img">
-                            <a href="product-details.html"><img src="../assets/themes/bag/images/cart/cart-1.jpg" alt=""></a>
-                        </div>
-                        <div class="cart-title">
-                            <h4><a href="product-details.html">Obey T-shirt With Tiger Print</a></h4>
-                            <span> 1 × $30.00	</span>
-                        </div>
-                        <div class="cart-delete">
-                            <a href="#"><i class="icon_close"></i></a>
-                        </div>
-                    </li>
-                    <li class="single-product-cart">
-                        <div class="cart-img">
-                            <a href="product-details.html"><img src="../assets/themes/bag/images/cart/cart-2.jpg" alt=""></a>
-                        </div>
-                        <div class="cart-title">
-                            <h4><a href="product-details.html">Satchel In Washed Navy Canvas </a></h4>
-                            <span> 1 × $12.00	</span>
-                        </div>
-                        <div class="cart-delete">
-                            <a href="#"><i class="icon_close"></i></a>
-                        </div>
-                    </li>
-                    <li class="single-product-cart">
-                        <div class="cart-img">
-                            <a href="product-details.html"><img src="../assets/themes/bag/images/cart/cart-3.jpg" alt=""></a>
-                        </div>
-                        <div class="cart-title">
-                            <h4><a href="product-details.html">The North Face T-Shirt</a></h4>
-                            <span> 1 × $25.00	</span>
-                        </div>
-                        <div class="cart-delete">
-                            <a href="#"><i class="icon_close"></i></a>
-                        </div>
-                    </li>
-                </ul>
-                <div class="cart-total">
-                    <h4>Subtotal: <span>$67.00</span></h4>
-                </div>
-                <div class="cart-checkout-btn">
-                    <a class="cart" href="cart">view cart <i class="ion-ios-arrow-right"></i></a>
-                    <a class="checkout" href="checkout">checkout <i class="ion-ios-arrow-right"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>  
+
+  <!-- mini cart start -->
+  <mini-cart :toggle="isCartActived" @dismiss="miniCartClose"></mini-cart>
+
   <!-- Log in start -->
-  <div class="modal popup-login-style" id="loginActive">
-    <div class="modal-overlay">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-body">
-            <div class="login-content">
-              <h2>Log in</h2>
-              <h3>Log in your account</h3>
-              <!-- <form @submit.prevent="login"> -->
-              <form>
-                <input required v-model="username" type="text" placeholder="Username" />
-                <input required v-model="password" type="password" placeholder="Password" />
-                <div class="remember-forget-wrap">
-                  <div class="remember-wrap">
-                    <input type="checkbox" />
-                    <p>Remember</p>
-                    <span class="checkmark"></span>
-                  </div>
-                  <div class="forget-wrap">
-                    <a href="#">Forgot your password?</a>
-                  </div>
-                </div>
-                <!-- <button type="submit" data-bs-dismiss="modal">Log in</button> -->
-                <button data-bs-dismiss="modal" v-on:click="login">Log in</button>
-                <div class="member-register">
-                  <p>
-                    Not a member?
-                    <a href="/login-register"> Register now</a>
-                  </p>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Log in end -->
+  <modal-login></modal-login>
+  
   <!-- register start -->
   <div class="modal popup-register-style" id="registerActive">
     <div class="modal-overlay">
@@ -733,6 +647,7 @@
     </div>
   </div>
   <!-- register end -->
+
   <!-- Mobile Menu start -->
   <div class="off-canvas-active" :class="{ inside: isMobileMenuActived }">
     <a class="off-canvas-close" v-on:click="onEndTriggerClick()"
@@ -1025,6 +940,8 @@ import "../assets/themes/bag/js/plugins/slinky.min.js";
 import { slinkyForVue } from "./slinky";
 import "../assets/themes/bag/js/plugins/easyzoom.js";
 import { AUTH_REQUEST, AUTH_LOGOUT } from "../store/actions/auth";
+import ModalLogin from "./ModalLogin.vue"
+import MiniCart from "./MiniCart.vue"
 
 export default {
   name: "header-area2",
@@ -1041,11 +958,8 @@ export default {
       password: 'dogy'
     };
   },
-  setup() {
-    const logined = false;
-    return {
-      logined
-    }
+  components: {
+    ModalLogin, MiniCart
   },
   methods: {
     onScroll() {
@@ -1058,11 +972,11 @@ export default {
     },
     onClickMobileMenuActiveButton() {
       this.isMobileMenuActived = true;
-      $('.main-wrapper-2').addClass('overlay-active-2');
+      this.showOverlay();
     },
     onEndTriggerClick() {
       this.menuClose();
-      this.cartClose();
+      this.miniCartClose();
     },
     onClickableMainmenuActiveClick() {
       this.isClickableMainmenuActive = true;
@@ -1072,21 +986,27 @@ export default {
     },
     onNavbarTriggerClick() {
       this.isCartActived = true;
-      $('.main-wrapper').addClass('overlay-active');
+      this.showOverlay();
     },
     menuClose() {
       this.isMobileMenuActived = false;
-      $('.main-wrapper-2').remove('overlay-active-2');
+      this.dismissOverlay();
     },
-    cartClose() {
+    miniCartClose() {
       this.isCartActived = false;
-      $('.main-wrapper').removeClass('overlay-active');
+      this.dismissOverlay();
     },
     login() {
       const { username, password } = this;
       this.$store.dispatch(AUTH_REQUEST, { username, password }).then(() => {
         this.$router.push("/");
       });
+    },
+    showOverlay() {
+      $('.main-wrapper').addClass('overlay-active-2');
+    },
+    dismissOverlay() {
+      $('.main-wrapper').removeClass('overlay-active-2');
     },
     logout() {
       this.$store.dispatch(AUTH_LOGOUT).then(() => {
@@ -1098,10 +1018,12 @@ export default {
     }
   },
   created() {
-    document.addEventListener("scroll", this.onScroll);
-    window.addEventListener("touchmove", this.onScroll);
+    // document.addEventListener("scroll", this.onScroll);
+    // window.addEventListener("touchmove", this.onScroll);
   },
   mounted() {
+    document.addEventListener("scroll", this.onScroll);
+    window.addEventListener("touchmove", this.onScroll);
     // Using slinky to format menu layout
     slinkyForVue();
 
@@ -1149,6 +1071,16 @@ export default {
       titleName: state => `${state.user.profile.title} ${state.user.profile.name}`
     })
   },
+  watch: {
+    // isCartActived: () => {
+    //   console.log(this.isCartActived);
+    //   if (this.isCartActived) {
+    //     $('.main-wrapper').addClass('overlay-active');
+    //   } else {
+    //     $('.main-wrapper').removeClass('overlay-active');
+    //   }
+    // }
+  }
 };
 </script>
 

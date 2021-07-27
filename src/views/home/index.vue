@@ -28,7 +28,7 @@
                         <div class="col-12">
                             <div class="hero-content-8 slider-animated-2">
                                 <h4 class="animated">LEATHER <br>BACKPACKS <br>MENS </h4>
-                                <h1 class="animated">Leather Backpacks</h1>
+                                <h1 class="animated">YO KYOKA</h1>
                                 <p class="animated">Lorem ipsum dolor sit amet, consectetur adipis elit. Nunc imperdiet, nulla a scelerisque condimentum, enim mi blandit erat, at blandit. </p>
                                 <div class="btn-style-7">
                                     <a class="animated" href="shop.html">VIEW COLLECTION <i class="ion-play"></i></a>
