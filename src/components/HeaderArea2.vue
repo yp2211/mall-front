@@ -996,19 +996,11 @@ export default {
       this.isCartActived = false;
       this.dismissOverlay();
     },
-<<<<<<< HEAD
     showOverlay() {
       $('.main-wrapper').addClass('overlay-active-2');
     },
     dismissOverlay() {
       $('.main-wrapper').removeClass('overlay-active-2');
-=======
-    login() {
-      const { username, password } = this;
-      this.$store.dispatch(AUTH_REQUEST, { username, password }).then(() => {
-        this.$router.push("/");
-      });
->>>>>>> 13e4f57118b025eac97eb4031ba53d175d972242
     },
     logout() {
       this.$store.dispatch(AUTH_LOGOUT).then(() => {
