@@ -14,7 +14,7 @@
             <p>
               Copyright © 2021 All rights reserved | Made with
               <i class="fa fa-heart"></i> by
-              <a href="http://www.bootstrapmb.com"> HasThemes</a>.
+              <a href="https://seedling-future.business.site/">Roc Yang</a>.
             </p>
           </div>
         </div>
@@ -23,7 +23,7 @@
             <ul>
               <li><a href="#">Term & Conditions</a></li>
               <li><a href="#">Privacy Policy</a></li>
-              <li><a href="contact-us.html">Help</a></li>
+              <li><a href="/contact-us">Help</a></li>
               <li><a href="#">Products Return</a></li>
             </ul>
           </div>
@@ -32,9 +32,9 @@
           <div class="footer-list mb-40">
             <ul>
               <li><a href="#">Shipping</a></li>
-              <li><a href="contact-us.html">Our Location</a></li>
+              <li><a href="/contact-us">Our Location</a></li>
               <li><a href="faq.html">FAQ</a></li>
-              <li><a href="contact-us.html">Contact</a></li>
+              <li><a href="/contact-us">Contact</a></li>
             </ul>
           </div>
         </div>

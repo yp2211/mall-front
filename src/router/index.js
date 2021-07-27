@@ -74,6 +74,10 @@ const router = createRouter({
                   name: 'about',
                   component: () => import('../views/home/about.vue')
                 }, {
+                  path: '/contact-us',
+                  name: 'contactUs',
+                  component: () => import('../views/home/contact-us.vue')
+                }, {
                   path: '/404',
                   name: 'notfound',
                   component: () => import('../views/home/notfound.vue')

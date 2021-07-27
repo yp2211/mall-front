@@ -13,6 +13,7 @@ import store from './store'
 // window.$=window.jQuery=window.$jQuery=jQuery;
 
 const app = createApp(App);
+/*------ ScrollUp -------- */
 
 app.use(router);
 app.use(i18n);

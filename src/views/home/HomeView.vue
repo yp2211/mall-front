@@ -15,6 +15,12 @@ export default {
     name: 'home-view',
     mounted() {
         // console.log(process.env);
+        $.scrollUp({
+            scrollText: '<i class="fa fa-angle-up"></i>',
+            easingType: 'linear',
+            scrollSpeed: 900,
+            animation: 'fade'
+        });
     }
 }
 </script>
