@@ -1,19 +1,14 @@
-import _imgUrlWhitePcURL from '../../assets/themes/default/images/logo-newtouch-full-white-pc.png'
-import _imgUrlWhiteSpURL from '../../assets/themes/default/images/logo-newtouch-full-white-pc.png'
-import _imgUrlBluePcURL from '../../assets/themes/default/images/logo-newtouch-full-blue-pc.png'
-import _imgUrlBlueSpURL from '../../assets/themes/default/images/logo-newtouch-full-blue-pc.png'
-
 export default {
     name: 'CommonContents',
     data: {
         images: {
-            imgUrlWhitePcURL: _imgUrlWhitePcURL,
-            imgUrlWhiteSpURL: _imgUrlWhiteSpURL,
-            imgUrlBluePcURL: _imgUrlBluePcURL,
-            imgUrlBlueSpURL: _imgUrlBlueSpURL,
+
         },
         variables: {
             scrollSpeed: 500,
+            phone: ["080-7699-7681"],
+            address: ["2-11-13-1104 Shibakoen","Minato City, Tokyo, Japan"],
+            email: ["rocyang81@gmail.com","yp2211@aliyun.com"],
         },
         api: {
             url: "/data/",

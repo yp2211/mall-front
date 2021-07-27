@@ -464,14 +464,14 @@
                   <span class="product-count bg-theme-color">01</span>
                 </a>
               </div>
-              <div class="header-action-search">
+              <div class="header-action-search" v-on:click="onHeaderActionSearchClick" :class="{'show':isSearchActived}">
                 <a class="search-active black" href="#">
                   <span class="t-icon">
                     <span class="t-line1"></span>
                     <span class="t-line2"></span>
                   </span>
                 </a>
-                <div class="search-categories-wrap">
+                <div class="search-categories-wrap" :class="{'show':isSearchActived}">
                   <form class="search-wrap-1" action="#">
                     <div class="categories-style">
                       <select class="select-active">
@@ -952,6 +952,7 @@ export default {
       isMobileMenuActived: false,
       isClickableMainmenuActive: false,
       isCartActived: false,
+      isSearchActived: false,
       // showModal: false
       username: 'dogo',
       password: 'dogy'
@@ -995,16 +996,27 @@ export default {
       this.isCartActived = false;
       this.dismissOverlay();
     },
+<<<<<<< HEAD
     showOverlay() {
       $('.main-wrapper').addClass('overlay-active-2');
     },
     dismissOverlay() {
       $('.main-wrapper').removeClass('overlay-active-2');
+=======
+    login() {
+      const { username, password } = this;
+      this.$store.dispatch(AUTH_REQUEST, { username, password }).then(() => {
+        this.$router.push("/");
+      });
+>>>>>>> 13e4f57118b025eac97eb4031ba53d175d972242
     },
-    logout: function() {
+    logout() {
       this.$store.dispatch(AUTH_LOGOUT).then(() => {
         this.$router.push("/");
       })
+    },
+    onHeaderActionSearchClick() {
+      this.isSearchActived = !this.isSearchActived;
     }
   },
   created() {
@@ -1016,6 +1028,31 @@ export default {
     window.addEventListener("touchmove", this.onScroll);
     // Using slinky to format menu layout
     slinkyForVue();
+
+
+    // /*----------------------
+    //     search active
+    // -----------------------*/
+    // if ($('.header-action-search').length) {
+    //     var $mrBaraDropdown = $('.header-action-search');
+    //     $mrBaraDropdown.on('click', '.search-active', function(e) {
+    //         e.preventDefault();
+    //         var $this = $(this);
+    //         if (!$this.parent().hasClass('show')) {
+    //             $this.siblings('.search-categories-wrap').addClass('show').parent().addClass('show');
+    //         } else {
+    //             $this.siblings('.search-categories-wrap').removeClass('show').parent().removeClass('show');
+    //         }
+    //     });
+    // }       
+
+    // /*---------------------
+    //     Select2 active
+    // --------------------- */
+    // $('.select-active').select2();
+    // $(window).on('resize', function(){
+    //     $('.select-active').select2()
+    // });
   },
   computed: {
     // isAuthenticated() {

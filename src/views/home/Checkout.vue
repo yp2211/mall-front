@@ -4,7 +4,7 @@
             <div class="breadcrumb-content-2 breadcrumb-content-2-center text-center">
                 <h2>Checkout</h2>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/index">Home</a></li>
                     <li>Checkout</li>
                 </ul>
             </div>
@@ -15,7 +15,7 @@
             <div class="row">
                 <div class="col-lg-7">
                     <div class="customer-zone mb-45">
-                        <p class="cart-page-title">Returning customer? <a class="checkout-click1" href="#">Click here to login</a></p>
+                        <p class="cart-page-title">Returning customer? <a class="checkout-click1" href="#" v-on:click="onShowLoginClick">Click here to login</a></p>
                         <div class="checkout-login-info">
                             <p>If you have shopped with us before, please enter your details in the boxes below. If you are a new customer, please proceed to the Billing & Shipping section.</p>
                             <form action="#">
@@ -23,13 +23,13 @@
                                     <div class="col-12">
                                         <div class="sin-checkout-login">
                                             <label> Username or email <span>*</span></label>
-                                            <input type="text" name="user-name">
+                                            <input type="text" name="user-name" placeholder="user name">
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="sin-checkout-login">
                                             <label>Passwords <span>*</span></label>
-                                            <input type="password" name="user-password">
+                                            <input type="password" name="user-password" placeholder="password" >
                                         </div>
                                     </div>
                                 </div>
@@ -50,7 +50,7 @@
                 </div>
                 <div class="col-lg-5">
                     <div class="customer-zone mb-45">
-                        <p class="cart-page-title">Have a coupon? <a class="checkout-click3" href="#">Click here to enter your code</a></p>
+                        <p class="cart-page-title">Have a coupon? <a class="checkout-click3" href="#" v-on:click="onShowCodeClick">Click here to enter your code</a></p>
                         <div class="checkout-login-info3">
                             <form action="#">
                                 <input type="text" placeholder="Coupon code">
@@ -136,7 +136,7 @@
                                 </div>
                             </div>
                             <div class="checkout-account checkout-checkbox-style-2 mb-25">
-                                <input class="checkout-toggle2" type="checkbox">
+                                <input class="checkout-toggle2" type="checkbox" v-on:click="onCreatAccountClick">
                                 <p>Create an account?</p>
                                 <span class="checkmark"></span>
                             </div>
@@ -151,7 +151,7 @@
                                 </div>
                             </div>
                             <div class="checkout-account checkout-checkbox-style-2 mt-25">
-                                <input class="checkout-toggle" type="checkbox">
+                                <input class="checkout-toggle" type="checkbox" v-on:click="onShipDiffClick">
                                 <p>Ship to a different address?</p>
                                 <span class="checkmark"></span>
                             </div>
@@ -306,3 +306,40 @@
         </div>
     </div>
 </template>
+<script>
+export default {
+    name: "Checkout",
+    data() {
+        return {
+            
+        }
+    },
+    methods: {
+        onShowLoginClick(e) {
+            e.preventDefault();
+            $('.checkout-login-info').slideToggle(900);
+        },
+        onShowCodeClick(e) {
+            e.preventDefault();
+            $('.checkout-login-info3').slideToggle(1000);
+        },
+        onCreatAccountClick(){
+            $('.open-toggle2').slideToggle(1000);
+        },
+        onShipDiffClick() {
+            $('.open-toggle').slideToggle(1000);
+        }
+    },
+    mounted() {
+        var checked = $( '.sin-payment input:checked' )
+        if(checked){
+            $(checked).siblings( '.payment-box' ).slideDown(900);
+        };
+        $( '.sin-payment input' ).on('change', function() {
+            $( '.payment-box' ).slideUp(900);
+            $(this).siblings( '.payment-box' ).slideToggle(900);
+        });
+    }
+}
+
+</script>
