@@ -464,8 +464,8 @@
                   <span class="product-count bg-theme-color">01</span>
                 </a>
               </div>
-              <div class="header-action-search" v-on:click="onHeaderActionSearchClick" :class="{'show':isSearchActived}">
-                <a class="search-active black" href="#">
+              <div class="header-action-search" :class="{'show':isSearchActived}">
+                <a class="search-active black" href="#" v-on:click="onHeaderActionSearchClick">
                   <span class="t-icon">
                     <span class="t-line1"></span>
                     <span class="t-line2"></span>
@@ -475,23 +475,7 @@
                   <form class="search-wrap-1" action="#">
                     <div class="categories-style">
                       <select class="select-active">
-                        <option>All Categories</option>
-                        <option>Accessories</option>
-                        <option>Belts</option>
-                        <option>Gloves</option>
-                        <option>Bags</option>
-                        <option>Game</option>
-                        <option>Patio</option>
-                        <option>Clothings</option>
-                        <option>Jeckets</option>
-                        <option>Bed Pillows</option>
-                        <option>Hats</option>
-                        <option>Beer Glasses</option>
-                        <option>Cowboy</option>
-                        <option>Jean’s Collection</option>
-                        <option>Shaving</option>
-                        <option>Shoes</option>
-                        <option>Bags</option>
+                        <option v-for="item in options" :key="item.id" :value="item.id">{{item.text}}</option>
                       </select>
                     </div>
                     <input placeholder="Search here" type="text" />
@@ -557,34 +541,18 @@
                   <span class="product-count bg-theme-color">01</span>
                 </a>
               </div>
-              <div class="header-action-search">
-                <a class="search-active black" href="#">
+              <div class="header-action-search" :class="{'show':isSearchActived}">
+                <a class="search-active black" href="#" v-on:click="onHeaderActionSearchClick">
                   <span class="t-icon">
                     <span class="t-line1"></span>
                     <span class="t-line2"></span>
                   </span>
                 </a>
-                <div class="search-categories-wrap">
+                <div class="search-categories-wrap"  :class="{'show':isSearchActived}">
                   <form class="search-wrap-1" action="#">
                     <div class="categories-style">
                       <select class="select-active">
-                        <option>All Categories</option>
-                        <option>Accessories</option>
-                        <option>Belts</option>
-                        <option>Gloves</option>
-                        <option>Bags</option>
-                        <option>Game</option>
-                        <option>Patio</option>
-                        <option>Clothings</option>
-                        <option>Jeckets</option>
-                        <option>Bed Pillows</option>
-                        <option>Hats</option>
-                        <option>Beer Glasses</option>
-                        <option>Cowboy</option>
-                        <option>Jean’s Collection</option>
-                        <option>Shaving</option>
-                        <option>Shoes</option>
-                        <option>Bags</option>
+                        <option v-for="item in options" :key="item.id" :value="item.id">{{item.text}}</option>
                       </select>
                     </div>
                     <input placeholder="Search here" type="text" />
@@ -940,8 +908,9 @@ import "../assets/themes/bag/js/plugins/slinky.min.js";
 import { slinkyForVue } from "./slinky";
 import "../assets/themes/bag/js/plugins/easyzoom.js";
 import { AUTH_REQUEST, AUTH_LOGOUT } from "../store/actions/auth";
-import ModalLogin from "./ModalLogin.vue"
-import MiniCart from "./MiniCart.vue"
+import ModalLogin from "./ModalLogin.vue";
+import MiniCart from "./MiniCart.vue";
+import CommonContents from "../components/CommonContents";
 
 export default {
   name: "header-area2",
@@ -953,13 +922,14 @@ export default {
       isClickableMainmenuActive: false,
       isCartActived: false,
       isSearchActived: false,
+      options: CommonContents.data.variables.categories,
       // showModal: false
       username: 'dogo',
-      password: 'dogy'
+      password: 'dogy',
     };
   },
   components: {
-    ModalLogin, MiniCart
+    ModalLogin, MiniCart, CommonContents
   },
   methods: {
     onScroll() {
@@ -1011,40 +981,19 @@ export default {
       this.isSearchActived = !this.isSearchActived;
     }
   },
-  created() {
-    // document.addEventListener("scroll", this.onScroll);
-    // window.addEventListener("touchmove", this.onScroll);
-  },
   mounted() {
     document.addEventListener("scroll", this.onScroll);
     window.addEventListener("touchmove", this.onScroll);
     // Using slinky to format menu layout
     slinkyForVue();
 
-
-    // /*----------------------
-    //     search active
-    // -----------------------*/
-    // if ($('.header-action-search').length) {
-    //     var $mrBaraDropdown = $('.header-action-search');
-    //     $mrBaraDropdown.on('click', '.search-active', function(e) {
-    //         e.preventDefault();
-    //         var $this = $(this);
-    //         if (!$this.parent().hasClass('show')) {
-    //             $this.siblings('.search-categories-wrap').addClass('show').parent().addClass('show');
-    //         } else {
-    //             $this.siblings('.search-categories-wrap').removeClass('show').parent().removeClass('show');
-    //         }
-    //     });
-    // }       
-
-    // /*---------------------
-    //     Select2 active
-    // --------------------- */
-    // $('.select-active').select2();
-    // $(window).on('resize', function(){
-    //     $('.select-active').select2()
-    // });
+    /*---------------------
+        Select2 active
+    --------------------- */
+    $('.select-active').select2();
+    $(window).on('resize', function(){
+        $('.select-active').select2()
+    });
   },
   computed: {
     // isAuthenticated() {
@@ -1079,4 +1028,5 @@ export default {
 </script>
 
 <style>
+@import "../assets/themes/bag/css/plugins/select2.min.css";
 </style>
