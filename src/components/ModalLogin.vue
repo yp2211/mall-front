@@ -47,8 +47,8 @@ export default {
     name: "ModalLogin",
     data() {
         return {
-            username: 'dogo',
-            password: 'dogy'
+            username: 'test',
+            password: 'macro123'
         }
     },
     methods: {

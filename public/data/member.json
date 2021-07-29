@@ -1,0 +1,79 @@
+{
+    "coupon": {
+        "list": [
+            {
+                "id": 2,
+                "type": 0,
+                "name": "全品类通用券",
+                "platform": 0,
+                "count": 92,
+                "amount": 10,
+                "perLimit": 1,
+                "minPoint": 100,
+                "startTime": "2018-08-27T16:40:47.000+00:00",
+                "endTime": "2018-11-23T16:40:47.000+00:00",
+                "useType": 0,
+                "note": "满100减10",
+                "publishCount": 100,
+                "useCount": 0,
+                "receiveCount": 8,
+                "enableTime": "2018-08-27T16:40:47.000+00:00"
+              },
+              {
+                "id": 3,
+                "type": 0,
+                "name": "小米手机专用券",
+                "platform": 0,
+                "count": 92,
+                "amount": 50,
+                "perLimit": 1,
+                "minPoint": 1000,
+                "startTime": "2018-08-27T16:40:47.000+00:00",
+                "endTime": "2018-11-16T16:40:47.000+00:00",
+                "useType": 2,
+                "note": "小米手机专用优惠券",
+                "publishCount": 100,
+                "useCount": 0,
+                "receiveCount": 8,
+                "enableTime": "2018-08-27T16:40:47.000+00:00"
+              },
+              {
+                "id": 4,
+                "type": 0,
+                "name": "手机品类专用券",
+                "platform": 0,
+                "count": 92,
+                "amount": 300,
+                "perLimit": 1,
+                "minPoint": 2000,
+                "startTime": "2018-08-27T16:40:47.000+00:00",
+                "endTime": "2018-09-15T16:40:47.000+00:00",
+                "useType": 1,
+                "note": "手机分类专用优惠券",
+                "publishCount": 100,
+                "useCount": 0,
+                "receiveCount": 8,
+                "enableTime": "2018-08-27T16:40:47.000+00:00"
+              },
+              {
+                "id": 7,
+                "type": 0,
+                "name": "T恤分类专用优惠券",
+                "platform": 0,
+                "count": 93,
+                "amount": 50,
+                "perLimit": 1,
+                "minPoint": 500,
+                "startTime": "2018-08-27T16:40:47.000+00:00",
+                "endTime": "2018-08-15T16:40:47.000+00:00",
+                "useType": 1,
+                "note": "满500减50",
+                "publishCount": 100,
+                "useCount": 0,
+                "receiveCount": 7,
+                "enableTime": "2018-08-27T16:40:47.000+00:00"
+              }
+        ]
+    }
+
+}
