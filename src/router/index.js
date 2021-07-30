@@ -4,20 +4,28 @@ import store from "../store";
 
 const routerHistory = createWebHistory();
 
+/*
+  beforeEnter /login
+  
+*/
 const ifNotAuthenticated = (to, from, next) => {
   if (!store.getters.isAuthenticated) {
     next();
     return;
   }
-  next("/");
+  next("/index?from="+to.path);
 };
 
+/*
+  beforeEnter /my-account
+
+*/
 const ifAuthenticated = (to, from, next) => {
   if (store.getters.isAuthenticated) {
     next();
     return;
   }
-  next("/login");
+  next("/login?from="+to.path);
 };
 
 const router = createRouter({
@@ -46,9 +54,10 @@ const router = createRouter({
                   name: 'productDetails',
                   component: () => import('../views/home/productDetails.vue')
                 },{
-                  path: '/login-register',
+                  path: '/login',
                   name: 'loginRegister',
-                  component: () => import('../views/home/login-register.vue')
+                  component: () => import('../views/home/login-register.vue'),
+                  beforeEnter: ifNotAuthenticated
                 }, {
                   path: '/cart',
                   name: 'cart',
@@ -77,6 +86,11 @@ const router = createRouter({
                   path: '/contact-us',
                   name: 'contactUs',
                   component: () => import('../views/home/contact-us.vue')
+                }, {
+                  path: '/my-account',
+                  name: 'MyAccount',
+                  component: () => import('../views/home/MyAccount.vue'),
+                  beforeEnter: ifAuthenticated
                 }, {
                   path: '/404',
                   name: 'notfound',
