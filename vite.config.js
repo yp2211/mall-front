@@ -12,16 +12,16 @@ export default {
   server: {
     host:'localhost',
     port:3000,
-    // proxy:{
-    //   '/api': {
-    //     target: {
-    //       protocol: 'http:',
-    //       host: 'localhost',
-    //       port: 8888
-    //     },
-    //     changeOrigin: true,
-    //     rewrite: (path) => path.replace(/^\/api/, '')
-    //   },
-    // }
+    proxy:{
+      '/api': {
+        target: {
+          protocol: 'http:',
+          host: 'localhost',
+          port: 8085
+        },
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '')
+      },
+    }
   }
 }

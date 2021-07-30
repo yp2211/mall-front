@@ -924,7 +924,7 @@ export default {
       isSearchActived: false,
       options: CommonContents.data.variables.categories,
       // showModal: false
-      username: 'dogo',
+      username: 'test',
       password: 'dogy',
     };
   },
@@ -1008,10 +1008,14 @@ export default {
     // titleName() {
     //   return this.$store.state.user.profile.title + this.$store.state.user.profile.name;
     // },
-    ...mapGetters(["getProfile", "isAuthenticated", "isProfileLoaded"]),
+    ...mapGetters({
+      getProfile: "getProfile", 
+      isAuthenticated: "isAuthenticated", 
+      isProfileLoaded: "isProfileLoaded"
+      }),
     ...mapState({
       authLoading: state => state.auth.status === "loading",
-      titleName: state => `${state.user.profile.title} ${state.user.profile.name}`
+      titleName: state => `Hi, ${state.user.profile.nickname}`
     })
   },
   watch: {
