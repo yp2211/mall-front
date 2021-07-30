@@ -3,10 +3,11 @@ import { USER_REQUEST, USER_ERROR, USER_SUCCESS } from "../actions/user";
 import { AUTH_LOGOUT } from "../actions/auth";
 import { postSsoInfo } from "../../api/sso";
 
+const USER_PROFILE = "user-profile";
 const user = {
   state: {
     status: "", 
-    profile: JSON.parse(localStorage.getItem("user-profile")) || {},
+    profile: JSON.parse(localStorage.getItem(USER_PROFILE)) || {},
   },
   actions: {
     [USER_REQUEST]: ({ commit, dispatch }, user) => {
@@ -30,8 +31,7 @@ const user = {
     [USER_SUCCESS]: (state, resp) => {
       state.status = "success";
       state.profile = resp.data.data;
-      console.log(resp.data)
-      localStorage.setItem("user-profile", JSON.stringify(state.profile));
+      localStorage.setItem(USER_PROFILE, JSON.stringify(resp.data.data));
       // Vue.set(state, "profile", resp);
     },
     [USER_ERROR]: state => {
@@ -39,13 +39,14 @@ const user = {
     },
     [AUTH_LOGOUT]: state => {
       state.profile = {};
-      localStorage.removeItem("user-profile");
+      localStorage.removeItem(USER_PROFILE);
     }
   }
 }
+
 // const state = { 
 //   status: "", 
-//   profile: JSON.parse(localStorage.getItem("user-profile")) || {},
+//   profile: JSON.parse(localStorage.getItem(USER_PROFILE)) || {},
 // };
 
 // const getters = {
@@ -76,7 +77,7 @@ const user = {
 //   [USER_SUCCESS]: (state, resp) => {
 //     state.status = "success";
 //     state.profile = resp.data;
-//     localStorage.setItem("user-profile", JSON.stringify(resp.data));
+//     localStorage.setItem(USER_PROFILE, JSON.stringify(resp.data));
 //     // Vue.set(state, "profile", resp);
 //   },
 //   [USER_ERROR]: state => {

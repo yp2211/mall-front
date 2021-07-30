@@ -9,9 +9,10 @@ import { USER_REQUEST } from "../actions/user";
 // import apiCall from "../../utils/api";
 import { postSsoLogin } from "../../api/sso";
 
+const USER_TOKEN = "user-token";
 const auth = {
   state: {
-    token: localStorage.getItem("user-token") || "",
+    token: localStorage.getItem(USER_TOKEN) || "",
     status: "",
     hasLoadedOnce: false
   },
@@ -21,14 +22,21 @@ const auth = {
     },
     [AUTH_SUCCESS]: (state, resp) => {
       state.status = "success";
-      state.token = resp.token;
+      const authToken = resp.data.data.tokenHead + resp.data.data.token;
+      // set auth to Vuex
+      state.token = authToken;
+      // save token into localStorage
+      localStorage.setItem(USER_TOKEN, authToken);
       state.hasLoadedOnce = true;
     },
     [AUTH_ERROR]: state => {
       state.status = "error";
-      state.hasLoadedOnce = true;
+      localStorage.removeItem(USER_TOKEN);
+      state.token = "";
+      state.hasLoadedOnce = true;      
     },
     [AUTH_LOGOUT]: state => {
+      localStorage.removeItem(USER_TOKEN);
       state.token = "";
     }
   },
@@ -39,9 +47,6 @@ const auth = {
         postSsoLogin( user.username, user.password ).then(resp => {
         // apiCall({ url: "auth", data: user, method: "POST" })
         //   .then(resp => {
-          const userToken = resp.data.data.tokenHead+resp.data.data.token;
-          console.log(userToken)
-          localStorage.setItem("user-token", userToken);
           // Here set the header of your ajax library to the token value.
           // example with axios
           // axios.defaults.headers.common['Authorization'] = userToken;
@@ -51,7 +56,6 @@ const auth = {
         })
         .catch(err => {
           commit(AUTH_ERROR, err);
-          localStorage.removeItem("user-token");
           reject(err);
         });
       });
@@ -59,15 +63,25 @@ const auth = {
     [AUTH_LOGOUT]: ({ commit }) => {
       return new Promise(resolve => {
         commit(AUTH_LOGOUT);
-        localStorage.removeItem("user-token");
         resolve();
       });
     }
   }
 }
 
+// function setAuthToken(o) {
+//   // set auth to Vuex
+//   auth.state.token = o;
+//   // save localStorage
+//   localStorage.setItem(USER_TOKEN, o);
+// }
+
+// function clearAuthToken() {
+//   localStorage.removeItem(USER_TOKEN);
+//   auth.state.token = "";
+// }
   // const state = {
-  //   token: localStorage.getItem("user-token") || "",
+  //   token: localStorage.getItem(USER_TOKEN) || "",
   //   status: "",
   //   hasLoadedOnce: false
   // };
@@ -87,7 +101,7 @@ const auth = {
   //       //   .then(resp => {
   //         console.log(resp)
   //         const userToken = resp.data.data.tokenHead+resp.data.data.token;
-  //         localStorage.setItem("user-token", userToken);
+  //         localStorage.setItem(USER_TOKEN, userToken);
   //         // Here set the header of your ajax library to the token value.
   //         // example with axios
   //         axios.defaults.headers.common['Authorization'] = userToken;
@@ -97,7 +111,7 @@ const auth = {
   //       })
   //       .catch(err => {
   //         commit(AUTH_ERROR, err);
-  //         localStorage.removeItem("user-token");
+  //         localStorage.removeItem(USER_TOKEN);
   //         reject(err);
   //       });
   //     });
@@ -105,7 +119,7 @@ const auth = {
   //   [AUTH_LOGOUT]: ({ commit }) => {
   //     return new Promise(resolve => {
   //       commit(AUTH_LOGOUT);
-  //       // localStorage.removeItem("user-token");
+  //       // localStorage.removeItem(USER_TOKEN);
   //       resolve();
   //     });
   //   }
