@@ -380,10 +380,10 @@
                       <li class="mega-menu-sub-width25">
                         <a class="menu-title" href="#">Shop Pages</a>
                         <ul>
-                          <li><a href="my-account.html">My Account</a></li>
-                          <li><a href="checkout.html">Check Out</a></li>
-                          <li><a href="cart.html">Shopping Cart</a></li>
-                          <li><a href="wishlist.html">Wishlist</a></li>
+                          <li><a href="/my-account">My Account</a></li>
+                          <li><a href="/checkout">Check Out</a></li>
+                          <li><a href="/cart">Shopping Cart</a></li>
+                          <li><a href="/wishlist">Wishlist</a></li>
                           <li>
                             <a href="order-tracking.html">Order Tracking</a>
                           </li>
@@ -430,7 +430,7 @@
               <div class="header-action-login-signup">
                 <a
                   class="black"
-                  href="/account"
+                  href="/my-account"
                   v-if="isProfileLoaded"
                   >{{ titleName }}</a
                 >            
@@ -507,7 +507,7 @@
               <div class="header-action-login-signup">
                 <a
                   class="black"
-                  href="/account"
+                  href="/my-account"
                   v-if="isProfileLoaded"
                   >{{ titleName }}</a
                 >            
@@ -859,13 +859,13 @@
                 <li>
                   <a href="#">Shop Pages</a>
                   <ul>
-                    <li><a href="my-account.html">My Account</a></li>
-                    <li><a href="checkout.html">Check Out</a></li>
-                    <li><a href="cart.html">Shopping Cart</a></li>
-                    <li><a href="wishlist.html">Wishlist</a></li>
-                    <li><a href="order-tracking.html">Order Tracking</a></li>
-                    <li><a href="login-register.html">Login Register</a></li>
-                    <li><a href="compare.html">Compare </a></li>
+                    <li><a href="/my-account">My Account</a></li>
+                    <li><a href="/checkout">Check Out</a></li>
+                    <li><a href="/cart">Shopping Cart</a></li>
+                    <li><a href="/wishlist">Wishlist</a></li>
+                    <li><a href="/order-tracking">Order Tracking</a></li>
+                    <li><a href="/login-register">Login Register</a></li>
+                    <li><a href="/compare">Compare </a></li>
                   </ul>
                 </li>
                 <li>
@@ -902,11 +902,13 @@
 </template>
 
 <script>
-import { mapGetters, mapState } from "vuex";
 import "../assets/themes/bag/js/vendor/bootstrap.min.js";
 import "../assets/themes/bag/js/plugins/slinky.min.js";
-import { slinkyForVue } from "./slinky";
 import "../assets/themes/bag/js/plugins/easyzoom.js";
+import "../assets/themes/bag/js/plugins/select2.min.js"
+
+import { mapGetters, mapState } from "vuex";
+import { slinkyForVue } from "./slinky";
 import { AUTH_REQUEST, AUTH_LOGOUT } from "../store/actions/auth";
 import ModalLogin from "./ModalLogin.vue";
 import MiniCart from "./MiniCart.vue";
