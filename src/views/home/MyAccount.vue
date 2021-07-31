@@ -204,19 +204,36 @@ import { AUTH_REQUEST, AUTH_LOGOUT } from "../../store/actions/auth";
 
 export default {
     name: "MyAccount", 
+    data() {
+        return {
+            orderList: null
+        }
+    },
     computed: {
         ...mapGetters(["getProfile", "isAuthenticated", "isProfileLoaded"]),
         ...mapState({
         authLoading: state => state.auth.status === "loading",
-        titleName: state => `${state.user.profile.title} ${state.user.profile.name}`,
-        userName: state => `${state.user.profile.name}`
+        titleName: state => `${state.user.profile.nickname}`,
+        userName: state => `${state.user.profile.nickname}`
         })
+    },
+    mounted: {
+
     },
     methods: {
         logout() {
             this.$store.dispatch(AUTH_LOGOUT).then(() => {
                 this.$router.push("/login?from="+this.$route.path);
             })
+        },
+        getOderList() {
+            getOderList()
+            .then(response => {
+                this.items = response.data;
+            })
+            .catch(function(error) {
+                console.log(error);
+            });
         }
     }
 }

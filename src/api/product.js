@@ -1,12 +1,14 @@
 import request from '../utils/request'
 
 export function getProductDetail(id) {
-    console.log("product.js.getProductDetail");
-    console.log("pid:"+id);
-    return request({
-        url:'/product.json',
-        method:'get'
-      });
+  // console.log("product.js.getProductDetail");
+  // console.log("pid:"+id);
+  const url = "/product/detail";
+  // const json = "/product.json";
+  return request({
+      url: `${url}/${id}`,
+      method:'get'
+  });
 }
 
 export function getRelatedProducts(pid) {

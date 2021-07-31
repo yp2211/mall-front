@@ -95,8 +95,8 @@ export default {
     return {
       identifyCodes: "1234567890",
       identifyCode: "",
-      username: 'dogo',
-      password: 'dogy'
+      username: null,
+      password: null
     };
   },
   mounted() {

@@ -20,7 +20,7 @@ export default {
           port: 8085
         },
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '')
+        rewrite: (path) => path.replace(/^\/api/, '') //path.substring(path.indexOf("api/"))
       },
     }
   }

@@ -8,11 +8,20 @@
                             <div class="product-details-img-wrap product-details-img-mrg">
                                 <div class="swiper-container product-details-big-img-slider-2 product-details-big-img-style">
                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide" v-for="(img, index) in product.imgs" v-bind:key="index">
+                                        <div class="swiper-slide">
                                             <div class="easyzoom-style">
                                                 <div class="easyzoom easyzoom--overlay">
-                                                    <a :href="img.large">
-                                                        <img :src="img.small" alt="">
+                                                    <a :href="product.pic">
+                                                        <img :src="product.pic" alt="">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide" v-for="(img, index) in product.albumPics.split(',')" v-bind:key="index">
+                                            <div class="easyzoom-style">
+                                                <div class="easyzoom easyzoom--overlay">
+                                                    <a :href="img">
+                                                        <img :src="img" alt="">
                                                     </a>
                                                 </div>
                                             </div>
@@ -23,9 +32,14 @@
                                 </div>
                                 <div class="swiper-container product-details-small-img-slider product-details-small-img-slider-style">
                                     <div class="swiper-wrapper">
-                                        <div class="swiper-slide" v-for="(img, index) in product.imgs" v-bind:key="index">
+                                        <div class="swiper-slide">
                                             <div class="product-details-small-img">
-                                                <img :src="img.thumb" alt="Product Thumnail">
+                                                <img :src="product.pic" alt="Product Thumnail">
+                                            </div>                                            
+                                        </div>
+                                        <div class="swiper-slide" v-for="(img, index) in product.albumPics.split(',')" v-bind:key="index">
+                                            <div class="product-details-small-img">
+                                                <img :src="img" alt="Product Thumnail">
                                             </div>                                            
                                         </div>
                                     </div>
@@ -42,8 +56,9 @@
                                         <a href="#"><i class="ion-ios-arrow-forward"></i></a>
                                     </div>
                                 </div>
-                                <h2>{{ product.title }}</h2>
-                                <div class="product-details-review-wrap">
+                                <h2>{{ product.name }}</h2>
+                                <!-- product review start -->
+                                <!-- <div class="product-details-review-wrap">
                                     <div class="product-details-review">
                                         <div class="product-rating">
                                             <review-stars :stars="product.stars"></review-stars>
@@ -53,12 +68,13 @@
                                     <div class="write-review">
                                         <a href="#">Write your review</a>
                                     </div>
-                                </div>
+                                </div> -->
+                                <!-- product review end -->
                                 <div class="product-details-price">
-                                    <span class="old-price">${{product.price}}</span>
-                                    <span class="new-price">${{product.priceSell}}</span>
+                                    <span class="old-price">${{product.originalPrice}}</span>
+                                    <span class="new-price">${{product.price}}</span>
                                 </div>
-                                <p v-html="product.summary"></p>
+                                <p v-html="product.description"></p>
                                 <div class="product-stock">
                                     <p>Availability: 
                                         <span v-if="product.stock>0">{{product.stock}} in stock</span>
@@ -78,15 +94,15 @@
                                 </div>
                                 <div class="product-details-meta">
                                     <ul>
-                                        <li><span class="title">SKU:</span> {{product.skuId}}</li>
-                                        <li><span class="title">Category:</span> <a href="#">{{product.category}}</a></li>
-                                        <li><span class="title">Tags:</span>
+                                        <!-- <li><span class="title">SKU:</span> {{product.skuId}}</li> -->
+                                        <li><span class="title">Category:</span> <a href="#">{{product.productCategoryName}}</a></li>
+                                        <!-- <li><span class="title">Tags:</span>
                                             <ul class="tag">
                                                 <li v-for="(item, index) in product.tags" v-bind:key="index">
                                                     <a :href="`/shop?tag=${item}`">{{item}}</a>{{(index < product.tags.length-1)?"," : ""}}
                                                 </li>
                                             </ul>
-                                        </li>
+                                        </li> -->
                                         <li><span class="title">Share:</span>
                                             <ul class="social">
                                                 <li><a href="#"><i class="ion-social-twitter"></i></a></li>
@@ -101,7 +117,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="description-review-area pt-115">
+                    <!-- review area start -->
+                    <!-- <div class="description-review-area pt-115">
                         <div class="description-review-topbar nav">
                             <a class="active" data-bs-toggle="tab" href="#des-details1"> Description </a>
                             <a data-bs-toggle="tab" href="#des-details2"> Additional information </a>
@@ -172,13 +189,14 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
+                    <!-- review area end -->
                 </div>
                 <div class="col-lg-3">
                     <div class="sidebar-wrapper sidebar-wrapper-margin-none">
                         <div class="sidebar-widget mb-50">
                             <div class="sidebar-widget-img">
-                                <img src="../../assets/themes/bag/images/product-details/pro-details-sidebar-img.png" alt="">
+                                <img :src="brand ? brand.logo : ''" alt="">
                             </div>
                         </div>
                         <div class="sidebar-widget mb-45">
@@ -216,7 +234,7 @@
                             </div>
                         </div>
                         <div class="sidebar-widget">
-                        <recent-products />
+                        <!-- <recent-products /> -->
                         </div>
                     </div>
                 </div>
@@ -233,9 +251,9 @@
                     <div class="swiper-slide" v-for="(item, index) in relativeProducts" :key="index">
                         <div class="product-wrap">
                             <div class="product-img mb-20">
-                                <a :href="`/product/${item.pid}`">
-                                    <img class="default-img" :src="item.imgsPreview.default.large" alt="">
-                                    <img class="hover-img" :src="item.imgsPreview.hover.large" alt="">
+                                <a :href="`/product/${item.id}`">
+                                    <img class="default-img" :src="item.pic" alt="">
+                                    <img class="hover-img" :src="item.pic" alt="">
                                 </a>
                                 <div class="product-action-wrap">
                                     <div class="product-action-left">
@@ -249,13 +267,13 @@
                                 </div>
                             </div>
                             <div class="product-content text-center">
-                                <div class="product-rating">
+                                <!-- <div class="product-rating">
                                     <review-stars :stars="item.stars"></review-stars>
-                                </div>
-                                <h3><a :href="`/product/${item.pid}`">{{item.title}}</a></h3>
+                                </div> -->
+                                <h3><a :href="`/product/${item.id}`">{{item.name}}</a></h3>
                                 <div class="product-price">
-                                    <span class="old-price">{{item.price}}</span>
-                                    <span class="new-price">{{item.priceSell}}</span>
+                                    <span class="old-price">{{item.originalPrice}}</span>
+                                    <span class="new-price">{{item.price}}</span>
                                 </div>
                             </div>
                         </div>
@@ -264,11 +282,10 @@
             </div>
         </div>
     </div>
-    <preview-product :product="previewProduct" />
+    <!-- <preview-product :product="previewProduct" /> -->
 </template>
 
 <script>
-console.log("productDetails.498");
 import {getProductDetail,getRelatedProducts} from "../../api/product";
 import Swiper, {
   Autoplay,
@@ -293,7 +310,12 @@ export default {
             product: DataStructures.data.product,
             relativeProducts: [DataStructures.data.product],
             myStars: 0,
-            previewProduct: DataStructures.data.product
+            previewProduct: DataStructures.data.product,
+            brand: DataStructures.data.brand,
+            productAttributeList: DataStructures.data.productAttributeList,
+            productAttributeValueList: DataStructures.data.productAttributeValueList,
+            skuStockList: DataStructures.data.skuStockList,
+            couponList: null,
         }
     },
     components: {
@@ -301,26 +323,32 @@ export default {
         RecentProducts,
         PreviewProduct
     },
-    beforeCreate() {
-    },
     mounted() {
-        console.log("mounted");
+        // console.log("mounted");
         
+        /*
+         * get product info
+        */
         getProductDetail(this.pid)
         .then(response => {
-            this.product = response.data;
+            this.product = response.data.data.product;
+            this.brand = response.data.data.brand;
+            this.productAttributeList = response.data.data.productAttributeList;
+            this.productAttributeValueList = response.data.data.productAttributeValueList;
+            this.skuStockList = response.data.data.skuStockList;
+            this.couponList = response.data.data.couponList;
         })
         .catch(function (error) {
             console.log(error);
         }); 
 
-        getRelatedProducts(this.pid)
-        .then(response => {
-            this.relativeProducts = response.data;
-        })
-        .catch(function (error) {
-            console.log(error);
-        }); 
+        // getRelatedProducts(this.pid)
+        // .then(response => {
+        //     this.relativeProducts = response.data;
+        // })
+        // .catch(function (error) {
+        //     console.log(error);
+        // }); 
     },
     methods: {
         onProductChanged() {
